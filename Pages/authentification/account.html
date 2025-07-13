@@ -1,0 +1,36 @@
+<div class="big-title">
+    <div class="big-title-content text-center text-white">
+        <h1>Mon compte</h1>
+    </div>
+</div>
+
+<div class="text-center py-4" data-show="disconnected">
+    <a href="/signin" class="btn btn-primary">Se connecter</a>
+</div>
+<div class="container mt-3" data-show="connected">
+    <form>
+        <div class="mb-3">
+            <label for="nameAccount" class="form-label">Nom</label>
+            <input type="text" class="form-control" id="nameAccount" placeholder="Votre nom">
+        </div>
+        <div class="mb-3">
+            <label for="firstnameAccount" class="form-label">Prénom</label>
+            <input type="text" class="form-control" id="firstnameAccount" placeholder="Votre prénom">
+        </div>
+        <div class="mb-3">
+            <label for="allergiesAccount" class="form-label">Alergies</label>
+            <input type="text" class="form-control" id="allergiesAccount" placeholder="Vos allergies (fruits de mer, arachide, ...)">
+        </div>
+        <div class="mb-3">
+            <label for="nbConvivesAccount" class="form-label">Nombre de convives habituel</label>
+            <input type="number" class="form-control" id="nbConvivesAccount" placeholder="Combien êtes vous habituellement ?">
+        </div>
+        <div class="text-center mb-2">
+            <button type="submit" class="btn btn-primary">Modifier vos informations</button>
+        </div>
+    </form>
+    <div class="text-center mt-2 mb-3">
+        <a href="/editPSW">Cliquer ici pour modifier votre mot de passe.</a>
+    </div>
+
+</div>

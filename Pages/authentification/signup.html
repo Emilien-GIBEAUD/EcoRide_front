@@ -1,0 +1,57 @@
+<div class="big-title">
+    <div class="big-title-content text-center text-white">
+        <h1>Inscription</h1>
+    </div>
+</div>
+
+<div class="container mt-3">
+    <form id="suscribeForm">
+        <div class="mb-3">
+            <label for="nameSignup" class="form-label">Nom</label>
+            <input type="text" class="form-control" id="nameSignup" placeholder="Votre nom" name="nameSignup">
+            <div class="invalid-feedback">
+                Le nom est requis.
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="firstnameSignup" class="form-label">Prénom</label>
+            <input type="text" class="form-control" id="firstnameSignup" placeholder="Votre prénom" name="firstnameSignup">
+            <div class="invalid-feedback">
+                Le prénom est requis.
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="emailSignup" class="form-label">Email</label>
+            <input type="email" class="form-control" id="emailSignup" placeholder="Votre email" name="emailSignup">
+            <div class="invalid-feedback">
+                Le mail n'est pas au bon format.
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="pswSignup" class="form-label">Mot de passe</label>
+            <input type="password" class="form-control" id="pswSignup" name="pswSignup">
+            <div class="invalid-feedback">
+                Mot de passe invalide : Le mot de passe doit contenir au moins 8 caractères, dont 1 minuscule, 1 majuscule, 1 chiffre et 1 caractère spécial.
+            </div>
+            <div class="valid-feedback">
+                Mot de passe valide.
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="pswConfirmSignup" class="form-label">Confirmer votre mot de passe</label>
+            <input type="password" class="form-control" id="pswConfirmSignup">
+            <div class="invalid-feedback">
+                Les mots de passe saisis sont différents.
+            </div>
+            <div class="valid-feedback">
+                Les mots de passe saisis sont identiques.
+            </div>
+        </div>
+        <div class="text-center">
+            <button type="button" class="btn btn-primary" id="btnSuscribe">Inscription</button>
+        </div>
+    </form>
+    <div class="text-center mt-2 mb-3">
+        <a href="/signin">Vous avez déjà un compte ? Connectez vous ici !</a>
+    </div>
+</div>
