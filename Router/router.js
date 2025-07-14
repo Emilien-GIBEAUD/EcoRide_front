@@ -3,7 +3,7 @@ import { allRoutes, websiteName } from "./allRoutes.js";
 import { isConnected, showHideForRoles, getRole } from '../Assets/js/script.js';
 
 // Création d'une route pour la page 404 (page introuvable)
-const route404 = new Route("404", "Page introuvable", "/pages/404.html", []);
+const route404 = new Route("404", "Page introuvable", "/Pages/404.html", []);
 
 // Fonction pour récupérer la route correspondant à une URL donnée
 const getRouteByUrl = (url) => {

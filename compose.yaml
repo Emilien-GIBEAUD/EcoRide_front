@@ -1,0 +1,10 @@
+services:
+  web:
+    image: nginx:1.29.0-alpine3.22
+    container_name: ecoride
+    volumes:
+      - ./:/usr/share/nginx/html
+      - ./nginx-dev.conf:/etc/nginx/conf.d/default.conf
+    ports:
+      - "3000:80"
+
