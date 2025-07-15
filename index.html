@@ -18,22 +18,29 @@
             <img class="logo_icon" src="./Assets/icon/carpooling.svg" alt="logo de EcoRide">
         </div>
         <nav>
-            <a href="/" class="menu_button">
-                <img src="./Assets/icon/home.svg" alt="icône d'accueil">Accueil
-            </a>
-            <a href="/carpooling" class="menu_button">
-                <img src="./Assets/icon/car.svg" alt="icône de voiture">Covoiturage
-            </a>
-            <a href="/signin" class="menu_button">
-                <img src="./Assets/icon/user.svg" alt="icône de connexion">Connexion
-            </a>
-            <a href="/account" class="menu_button">
-                <img src="./Assets/icon/user.svg" alt="icône de connexion">Compte
-            </a>
-            <a href="/signout">Deconnexion</a>
-            <a href="" class="menu_button">
-                <img src="./Assets/icon/contact.svg" alt="icône de contact">Contact
-            </a>
+            <div class="menu_btn menu_home">
+                <a href="/" class="stretched-link">Accueil</a>
+                <img src="./Assets/icon/home.svg" alt="icône d'accueil">
+            </div>
+            <div class="menu_btn menu_carpool">
+                <a href="/carpooling" class="stretched-link">Covoiturage</a>
+                <img src="./Assets/icon/car.svg" alt="icône de voiture">
+            </div>
+            <div class="menu_btn menu_login">
+                <a href="/signin" class="stretched-link">Connexion</a>
+                <img src="./Assets/icon/user.svg" alt="icône de connexion">
+            </div>
+            <!-- A REACTIVER QUAND LE COMPTE SERA FONCTIONNEL
+            <div class="menu_btn menu_account">
+                <a href="/account" class="stretched-link">Compte</a>
+                <img src="./Assets/icon/user.svg" alt="icône de compte">
+            </div>
+            -->
+            <a href="/signout" class="vertical-link">Deconn.</a>
+            <div class="menu_btn menu_contact">
+                <a href="/contact" class="stretched-link">Contact</a>
+                <img src="./Assets/icon/contact.svg" alt="icône de contact">
+            </div>
         </nav>
     </header>
 

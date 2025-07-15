@@ -60,6 +60,15 @@ const LoadContentPage = async () => {
         }
     }
 
+    // Ajout du style CSS
+    if (actualRoute.pathCSS) {
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = actualRoute.pathCSS;
+        document.head.appendChild(link);
+    }
+
+
     // Changement du titre de la page
     document.title = actualRoute.title + " - " + websiteName;
 
