@@ -1,0 +1,22 @@
+// This file is served on the home page
+@import 'variables';
+@import 'functions';
+
+.home {
+    .pres_icon{
+        height: 60px;
+        align-self: flex-end;
+        margin-bottom: 5px;
+    }
+    .pres_img{
+        width: 204px;
+        height: 153px;
+        align-self: flex-end;
+        margin-bottom: 10px;
+    }
+    .action {
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+    }
+}

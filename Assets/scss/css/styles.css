@@ -1,5 +1,5 @@
 @charset "UTF-8";
-/* DEBUT partie générale ---------------------------------------------------------*/
+/* DEBUT partie générale ----------------------------------------------*/
 * { /* RESET */
   margin: 0;
   padding: 0;
@@ -34,7 +34,7 @@ a:hover {
 }
 
 body {
-  background-image: url(../img/michael-marais.jpg);
+  background-image: url(../../img/michael-marais.jpg);
   background-size: cover;
   background-position: center;
   display: grid;
@@ -54,6 +54,7 @@ body {
 }
 @media (orientation: portrait) {
   body {
+    height: 100vh;
     grid-template-columns: 1fr;
     grid-template-rows: 65px 1fr 30px;
   }
@@ -65,8 +66,8 @@ body {
   }
 }
 
-/* FIN partie générale ---------------------------------------------------------*/
-/* DEBUT HEADER ---------------------------------------------------------*/
+/*-- FIN partie générale ----------------------------------------------*/
+/* DEBUT HEADER -------------------------------------------------------*/
 header {
   display: flex;
   background-color: #BC7321;
@@ -226,7 +227,7 @@ header nav .menu_btn img {
 @media (max-width: 600px) {
   header nav .menu_btn img {
     position: relative;
-    top: 9px;
+    top: 12px;
     height: 25px;
   }
 }
@@ -262,20 +263,28 @@ header nav .menu_btn:active {
   }
 }
 
-/* FIN HEADER ---------------------------------------------------------*/
-/* DEBUT <button> & <a> -----------------------------------------------*/
+/*-- FIN HEADER -------------------------------------------------------*/
+/* DEBUT <button>, <input> & <a> --------------------------------------*/
 .btn {
   display: inline-block;
-  padding: 8px 10px;
-  background-color: #D0A370;
   color: #000000;
+  opacity: 1;
   border: solid thin #000000;
   border-radius: 10px;
+  padding: 8px 10px;
   width: -moz-fit-content;
   width: fit-content;
   font-size: 16px;
+  background-color: #D0A370;
   cursor: pointer;
   transition: all 0.3s ease;
+}
+@media (max-width: 600px) {
+  .btn {
+    padding: 5px 8px;
+    border-radius: 8px;
+    font-size: 13px;
+  }
 }
 
 .btn:hover {
@@ -286,97 +295,128 @@ header nav .menu_btn:active {
   transform: scale(1);
 }
 
+input {
+  display: inline-block;
+  color: #000000;
+  opacity: 1;
+  border: solid thin #000000;
+  border-radius: 10px;
+  padding: 8px 10px;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 16px;
+  background-color: #FFF8DC;
+}
+@media (max-width: 600px) {
+  input {
+    padding: 5px 8px;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+}
+
+input::-moz-placeholder {
+  color: #6C6C6C;
+  opacity: 1;
+}
+
+input::placeholder {
+  color: #6C6C6C;
+  opacity: 1;
+}
+
+input[type=date] {
+  color: #6C6C6C;
+}
+
+input[type=date]:valid {
+  color: #000000;
+}
+
 .btn_link {
   text-decoration: none !important;
 }
 
-/* FIN <button> & <a> -------------------------------------------------*/
+/*-- FIN <button>, <input> & <a> --------------------------------------*/
 /* DEBUT MAIN ---------------------------------------------------------*/
 main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
+  gap: 25px;
   padding: 5px 10px;
 }
-
-#seach_bar {
+@media (max-width: 600px) {
+  main {
+    gap: 5px;
+    padding: 2px 5px;
+  }
+}
+main .search_bar {
   display: flex;
   align-items: center;
+  background-color: rgba(255, 222, 173, 0.95);
+  border-radius: 1000px;
   gap: 0 5px;
-  padding: 2px 10px;
-  border-radius: 50px;
-  background-color: #FFDEAD;
+  padding: 5px 10px;
 }
-#seach_bar .inputs {
+@media (max-width: 600px) {
+  main .search_bar {
+    gap: 0 2px;
+    padding: 2px 5px;
+  }
+}
+main .search_bar .inputs {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 5px 10px;
 }
-#seach_bar img {
+@media (max-width: 600px) {
+  main .search_bar .inputs {
+    gap: 2px 5px;
+  }
+}
+main .search_bar .inputs input {
+  border-radius: 1000px;
+}
+main .search_bar img {
   height: 40px;
 }
-#seach_bar input {
-  background-color: #FFF8DC;
-  height: 30px;
-  width: -moz-fit-content;
-  width: fit-content;
-  border: solid thin #000000;
-  border-radius: 20px;
-  text-align: center;
-}
-#seach_bar input::-moz-placeholder {
-  color: #6C6C6C;
-  opacity: 1;
-}
-#seach_bar input::placeholder {
-  color: #6C6C6C;
-  opacity: 1;
-}
-#seach_bar input[type=date] {
-  color: #6C6C6C;
-}
-#seach_bar input[type=date]:valid {
-  color: #000000;
-}
 
-.home, .legals {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-grow: 2;
-}
-
-.presentation, .page_404 {
+.container {
   display: flex;
   flex-direction: column;
-  padding: 15px;
-  width: 90%;
-  max-width: 960px;
+  justify-content: center;
+  align-items: center;
   height: -moz-fit-content;
   height: fit-content;
-  background-color: #FFDEAD;
+  width: 90%;
+  max-width: 960px;
+  background-color: rgba(255, 222, 173, 0.95);
   border: solid thin #000000;
   border-radius: 25px;
-  font-size: large;
+  gap: 5px;
+  padding: 15px;
+  margin-bottom: 20px;
+  font-size: 16px;
   text-align: justify;
+  -moz-text-align-last: left;
+       text-align-last: left;
+}
+@media (max-width: 600px) {
+  .container {
+    border-radius: 15px;
+    gap: 2px;
+    padding: 8px;
+    margin-bottom: 10px;
+    font-size: 13px;
+  }
 }
 
-.pres_icon {
-  height: 60px;
-  align-self: flex-end;
-}
-
-.pres_img {
-  width: 204px;
-  height: 153px;
-  align-self: flex-end;
-}
-
-/* FIN MAIN ---------------------------------------------------------*/
-/* DEBUT FOOTER ---------------------------------------------------------*/
+/*-- FIN MAIN ---------------------------------------------------------*/
+/* DEBUT FOOTER -------------------------------------------------------*/
 footer {
   flex-grow: 1;
   position: sticky;
@@ -394,4 +434,4 @@ footer {
   }
 }
 
-/* FIN FOOTER ---------------------------------------------------------*//*# sourceMappingURL=styles.css.map */
+/*-- FIN FOOTER -------------------------------------------------------*/

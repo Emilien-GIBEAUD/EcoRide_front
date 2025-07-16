@@ -1,0 +1,4 @@
+// rgb => rgba to avoid to give opacity to the children of an element
+@function color_opacity($color, $opacity) {
+    @return rgba($color, $opacity);
+}
