@@ -11,29 +11,18 @@
 	text-decoration: none;
 	list-style: none;
 }
+h1 {	// for h1
+	margin: 0;
+	padding: 0;
+	font-size: $title;
+	color: $black;
+	@media (max-width: $brp_s) {
+		font-size: $title_xs;
+	}
+}
 
 html {
 	scroll-behavior: smooth;
-}
-
-a:link, a:visited, a:hover {
-	color: $black;
-	text-decoration: underline;
-}
-a:hover {
-	text-decoration: none;
-}
-
-.visually_hidden {
-	position: absolute !important;
-	width: 1px !important;
-	height: 1px !important;
-	padding: 0 !important;
-	margin: -1px !important;
-	overflow: hidden !important;
-	clip: rect(0,0,0,0) !important;
-	white-space: nowrap !important;
-	border: 0 !important;
 }
 
 body{
@@ -271,6 +260,26 @@ input[type="date"]:valid {
 }
 // See special search_bar input in MAIN section
 
+.visually_hidden {
+	position: absolute !important;
+	width: 1px !important;
+	height: 1px !important;
+	padding: 0 !important;
+	margin: -1px !important;
+	overflow: hidden !important;
+	clip: rect(0,0,0,0) !important;
+	white-space: nowrap !important;
+	border: 0 !important;
+}
+
+a:link, a:visited, a:hover {
+	color: $black;
+	text-decoration: underline;
+}
+a:hover {
+	text-decoration: none;
+}
+
 .btn_link {
 	text-decoration: none !important;
 }
@@ -342,6 +351,7 @@ main {
 		font-size: $text_xs;
 	}
 }
+
 
 /*-- FIN MAIN ---------------------------------------------------------*/
 

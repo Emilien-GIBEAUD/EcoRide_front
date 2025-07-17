@@ -1,0 +1,64 @@
+// This file is served on the sign pages
+@import 'variables';
+@import 'functions';
+
+/* DEBUT --------------------------------------------------------------*/
+main {
+    justify-content: center;
+}
+
+.sign {
+    align-content: center;
+    max-width: 450px;
+	@media (max-width: $brp_s) {
+		max-width: 350px;
+	}
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        gap: 15px;
+            @media (max-width: $brp_s) {
+                gap: 10px;
+            }
+        .form_input {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            gap: 3px;
+                @media (max-width: $brp_s) {
+                    gap: 1px;
+                }
+            input {
+                width: 100%;
+            }
+        }
+        .info {
+            width: 100%;
+            font-style: italic;
+        }
+    }
+}
+
+@mixin input_feedback{
+    display: none; // COMMENT FOR DEBUG COMMENT FOR DEBUG COMMENT FOR DEBUG
+    font-size: $text;
+	@media (max-width: $brp_s) {
+		font-size: $text_xs;
+	}
+}
+
+.danger_input{
+    @include input_feedback;
+    color: $danger;
+}
+.invalid_input{
+    @include input_feedback;
+    color: $warning;
+}
+.valid_input {
+    @include input_feedback;
+    color: $green;
+}
+/*-- FIN --------------------------------------------------------------*/
