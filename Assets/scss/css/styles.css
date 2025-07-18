@@ -25,7 +25,7 @@ html {
 }
 
 body {
-  background-image: url(../../img/michael-marais.jpg);
+  background-image: url(../../img/michael-marais.webp);
   background-size: cover;
   background-position: center;
   display: grid;
@@ -61,7 +61,7 @@ body {
 /* DEBUT HEADER -------------------------------------------------------*/
 header {
   display: flex;
-  background-color: #BC7321;
+  background-color: #D38228;
   border: solid thin #000000;
   position: sticky;
   top: 0;
@@ -180,8 +180,14 @@ header nav .menu_btn {
 }
 @media (max-width: 600px) {
   header nav .menu_btn {
+    border-radius: 8px;
     width: 66px;
     height: 45px;
+  }
+}
+@media (max-width: 380px) {
+  header nav .menu_btn {
+    border-radius: 5px;
   }
 }
 @media (orientation: portrait) {
@@ -307,17 +313,17 @@ input {
 }
 
 input::-moz-placeholder {
-  color: #6C6C6C;
+  color: #555555;
   opacity: 1;
 }
 
 input::placeholder {
-  color: #6C6C6C;
+  color: #555555;
   opacity: 1;
 }
 
 input[type=date] {
-  color: #6C6C6C;
+  color: #555555;
 }
 
 input[type=date]:valid {
@@ -436,7 +442,7 @@ footer {
   height: -moz-fit-content;
   height: fit-content;
   padding: 5px 25px;
-  background-color: #BC7321;
+  background-color: #D38228;
   border: solid thin #000000;
 }
 @media (max-width: 600px) {

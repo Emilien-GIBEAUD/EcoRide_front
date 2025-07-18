@@ -44,7 +44,6 @@ main {
 }
 
 .danger_input {
-  display: none;
   font-size: 16px;
   color: #DC3545;
 }
@@ -55,7 +54,6 @@ main {
 }
 
 .invalid_input {
-  display: none;
   font-size: 16px;
   color: #D08700;
 }
@@ -66,7 +64,6 @@ main {
 }
 
 .valid_input {
-  display: none;
   font-size: 16px;
   color: #46AC59;
 }

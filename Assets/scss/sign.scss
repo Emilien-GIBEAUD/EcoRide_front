@@ -42,7 +42,7 @@ main {
 }
 
 @mixin input_feedback{
-    display: none; // COMMENT FOR DEBUG COMMENT FOR DEBUG COMMENT FOR DEBUG
+    // display: none; // COMMENT FOR DEBUG COMMENT FOR DEBUG COMMENT FOR DEBUG
     font-size: $text;
 	@media (max-width: $brp_s) {
 		font-size: $text_xs;

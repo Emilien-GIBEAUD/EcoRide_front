@@ -26,7 +26,7 @@ html {
 }
 
 body{
-	background-image: url(../../img/michael-marais.jpg);
+	background-image: url(../../img/michael-marais.webp);
 	background-size: cover;
 	background-position: center;
 	display: grid;
@@ -143,8 +143,12 @@ header {
 					text-align: center;
 					cursor: pointer;
 					@media (max-width: $brp_s) {
+						border-radius: 8px;
 						width: 66px;
 						height: 45px;
+					}
+					@media (max-width: $brp_xs) {
+						border-radius: 5px;
 					}
 					@media (orientation: portrait) {
 							align-content: center;
