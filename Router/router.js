@@ -5,7 +5,7 @@ import { isConnected, showHideForRoles, getRole } from '../Assets/js/script.js';
 // Création d'une route pour la page 404 (page introuvable)
 const route404 = new Route("404", "Page introuvable", "/Pages/404.html", []);
 
-// Fonction pour récupérer la route correspondant à une URL donnée
+// Fonction qui renvoie la route correspondant à une URL donnée
 const getRouteByUrl = (url) => {
     let currentRoute = null;
     // Parcours de toutes les routes pour trouver la correspondance
@@ -47,6 +47,23 @@ const LoadContentPage = async () => {
     const html = await fetch(actualRoute.pathHtml).then((data) => data.text());
     // Ajout du contenu HTML à l'élément avec l'ID "main-page"
     document.getElementById("main-page").innerHTML = html;
+
+    // Pages utilisant un sous_menu
+    const urlWithSub_menu = ['/user', '/passenger', '/driver', '/review'];
+    const url = actualRoute.url;
+    if (urlWithSub_menu.includes(url)) {
+        try {
+            const sub_menu = await fetch('/Pages/_components/sub_menu.html').then((res) => res.text());
+            const nav = document.getElementById("sub_menu");
+            if (nav) {
+                nav.innerHTML = sub_menu;
+            } else {
+                console.warn("Aucun élément #sub_menu trouvé dans la page");
+            }
+        } catch (e) {
+            console.error("Erreur lors du chargement du menu secondaire :", e);
+        }
+    }
 
     // Ajout du contenu JavaScript AVEC import
     if (actualRoute.pathJS) {
@@ -91,8 +108,10 @@ document.querySelectorAll("a").forEach(link => {
 
 // Gestion de l'événement de retour en arrière dans l'historique du navigateur
 window.onpopstate = LoadContentPage;
+
 // Assignation de la fonction routeEvent à la propriété route de la fenêtre
 window.route = routeEvent;
+
 // Chargement du contenu de la page au chargement initial
 LoadContentPage();
 

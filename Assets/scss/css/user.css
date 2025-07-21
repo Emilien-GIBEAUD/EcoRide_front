@@ -9,7 +9,7 @@
     max-width: 350px;
   }
 }
-.user .sub_menu {
+.user #sub_menu {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -22,22 +22,22 @@
   border-bottom: solid thin #000000;
 }
 @media (max-width: 600px) {
-  .user .sub_menu {
+  .user #sub_menu {
     padding: 3px;
     gap: 5px;
     border-top-left-radius: 14px;
     border-top-right-radius: 14px;
   }
 }
-.user .sub_menu a {
+.user #sub_menu a {
   font-size: 14px;
 }
 @media (max-width: 600px) {
-  .user .sub_menu a {
+  .user #sub_menu a {
     font-size: 11px;
   }
 }
-.user .sub_menu .menu_btn {
+.user #sub_menu .menu_btn {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -53,30 +53,30 @@
   height: 50px;
 }
 @media (max-width: 600px) {
-  .user .sub_menu .menu_btn {
+  .user #sub_menu .menu_btn {
     border-radius: 8px;
     width: 66px;
   }
 }
-.user .sub_menu .menu_btn:hover {
+.user #sub_menu .menu_btn:hover {
   transform: scale(1.05);
 }
-.user .sub_menu .menu_btn:active {
+.user #sub_menu .menu_btn:active {
   transform: scale(1);
 }
 @media (max-width: 600px) {
-  .user .sub_menu .menu_btn {
+  .user #sub_menu .menu_btn {
     border-radius: 8px;
     width: 66px;
     height: 44px;
   }
 }
-.user .sub_menu .menu_btn img {
+.user #sub_menu .menu_btn img {
   position: relative;
   height: 30px;
 }
 @media (max-width: 600px) {
-  .user .sub_menu .menu_btn img {
+  .user #sub_menu .menu_btn img {
     height: 25px;
   }
 }
