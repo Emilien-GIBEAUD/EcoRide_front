@@ -7,7 +7,7 @@
     <meta name="description" content="Bienvenue sur l'application Ecoride. Inscrivez-vous et postez et/ou réservez vos trajets en covoiturage.">
     <link rel="stylesheet" href="./Assets/scss/css/styles.css">
     <link rel="shortcut icon" href="./Assets/icon/car.svg" type="image/x-icon">
-    <link rel="preload" href="./Assets/img/pierre-borthiry-peiobty.webp" as="image">
+<!--    <link rel="preload" href="./Assets/img/pierre-borthiry-peiobty.webp" as="image"> -->
 
     <script defer type="module" src="./Assets/js/script.js"></script>
     <script defer type="module" src="./Router/router.js"></script>
@@ -18,29 +18,29 @@
         <div class="logo">
             <img class="logo_icon" src="./Assets/icon/carpooling.svg" alt="logo de EcoRide">
         </div>
-        <nav>
+        <nav aria-label="Menu principal">
             <div class="menu_btn menu_home">
                 <a href="/" class="stretched-link">Accueil</a>
-                <img src="./Assets/icon/home.svg" alt="icône d'accueil">
+                <img src="./Assets/icon/home.svg" alt="">
             </div>
+<!-- 
             <div class="menu_btn menu_carpool">
                 <a href="/carpool" class="stretched-link">Covoiturage</a>
-                <img src="./Assets/icon/car.svg" alt="icône de voiture">
+                <img src="./Assets/icon/car.svg" alt="">
             </div>
+ -->
             <div class="menu_btn menu_login">
                 <a href="/signin" class="stretched-link">Connexion</a>
-                <img src="./Assets/icon/user.svg" alt="icône de connexion">
+                <img src="./Assets/icon/user.svg" alt="">
             </div>
-            <!-- A REACTIVER QUAND LE COMPTE SERA FONCTIONNEL
             <div class="menu_btn menu_account">
-                <a href="/account" class="stretched-link">Compte</a>
-                <img src="./Assets/icon/user.svg" alt="icône de compte">
+                <a href="/user" class="stretched-link">Compte</a>
+                <img src="./Assets/icon/user.svg" alt="">
             </div>
-            -->
             <a href="/signout" class="vertical-link">Deconn.</a>
             <div class="menu_btn menu_contact">
                 <a href="/contact" class="stretched-link">Contact</a>
-                <img src="./Assets/icon/contact.svg" alt="icône de contact">
+                <img src="./Assets/icon/contact.svg" alt="">
             </div>
         </nav>
     </header>
@@ -50,7 +50,7 @@
     </main>
 
     <footer>
-        <a href="/Contact" title="Lien vers le formulaire de contact">contact@covoit.fr</a> | 
+        <a href="/contact" title="Lien vers le formulaire de contact">contact@covoit.fr</a> | 
         <a href="/legals" title="Lien vers les mentions légales">Mentions légales</a>
     </footer>
 </body>

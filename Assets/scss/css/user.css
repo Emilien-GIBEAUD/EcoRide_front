@@ -1,0 +1,237 @@
+/* This file is served on these pages : signin, signup, account */
+/* START --------------------------------------------------------------*/
+.user {
+  padding: 0;
+  max-width: 450px;
+}
+@media (max-width: 600px) {
+  .user {
+    max-width: 350px;
+  }
+}
+.user .sub_menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  padding: 5px;
+  gap: 10px;
+  border-top-left-radius: 24px;
+  border-top-right-radius: 24px;
+  background-color: #D38228;
+  border-bottom: solid thin #000000;
+}
+@media (max-width: 600px) {
+  .user .sub_menu {
+    padding: 3px;
+    gap: 5px;
+    border-top-left-radius: 14px;
+    border-top-right-radius: 14px;
+  }
+}
+.user .sub_menu a {
+  font-size: 14px;
+}
+@media (max-width: 600px) {
+  .user .sub_menu a {
+    font-size: 11px;
+  }
+}
+.user .sub_menu .menu_btn {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  border: solid thin #000000;
+  border-radius: 10px;
+  padding: 3px;
+  background-color: #D0A370;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 85px;
+  height: 50px;
+}
+@media (max-width: 600px) {
+  .user .sub_menu .menu_btn {
+    border-radius: 8px;
+    width: 66px;
+  }
+}
+.user .sub_menu .menu_btn:hover {
+  transform: scale(1.05);
+}
+.user .sub_menu .menu_btn:active {
+  transform: scale(1);
+}
+@media (max-width: 600px) {
+  .user .sub_menu .menu_btn {
+    border-radius: 8px;
+    width: 66px;
+    height: 44px;
+  }
+}
+.user .sub_menu .menu_btn img {
+  position: relative;
+  height: 30px;
+}
+@media (max-width: 600px) {
+  .user .sub_menu .menu_btn img {
+    height: 25px;
+  }
+}
+.user .sub_page {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  gap: 15px;
+  align-items: center;
+  width: 100%;
+}
+@media (max-width: 600px) {
+  .user .sub_page {
+    padding: 8px;
+    gap: 10px;
+  }
+}
+.user .sub_page form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 15px;
+}
+@media (max-width: 600px) {
+  .user .sub_page form {
+    gap: 10px;
+  }
+}
+.user .sub_page form .form_input {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 3px;
+}
+@media (max-width: 600px) {
+  .user .sub_page form .form_input {
+    gap: 1px;
+  }
+}
+.user .sub_page form .form_input input {
+  width: 100%;
+}
+.user .sub_page form fieldset {
+  width: 100%;
+  padding: 5px 8px;
+}
+@media (max-width: 600px) {
+  .user .sub_page form fieldset {
+    padding: 3px 5px;
+  }
+}
+.user .sub_page form fieldset .form_checkbox {
+  display: flex;
+  gap: 8px;
+}
+@media (max-width: 600px) {
+  .user .sub_page form fieldset .form_checkbox {
+    gap: 5px;
+  }
+}
+.user .sub_page form .info {
+  width: 100%;
+  font-style: italic;
+}
+
+.sign {
+  align-content: center;
+  max-width: 450px;
+}
+@media (max-width: 600px) {
+  .sign {
+    max-width: 350px;
+  }
+}
+.sign form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 15px;
+}
+@media (max-width: 600px) {
+  .sign form {
+    gap: 10px;
+  }
+}
+.sign form .form_input {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 3px;
+}
+@media (max-width: 600px) {
+  .sign form .form_input {
+    gap: 1px;
+  }
+}
+.sign form .form_input input {
+  width: 100%;
+}
+.sign form fieldset {
+  width: 100%;
+  padding: 5px 8px;
+}
+@media (max-width: 600px) {
+  .sign form fieldset {
+    padding: 3px 5px;
+  }
+}
+.sign form fieldset .form_checkbox {
+  display: flex;
+  gap: 8px;
+}
+@media (max-width: 600px) {
+  .sign form fieldset .form_checkbox {
+    gap: 5px;
+  }
+}
+.sign form .info {
+  width: 100%;
+  font-style: italic;
+}
+
+.danger_input {
+  display: none;
+  font-size: 16px;
+  color: #DC3545;
+}
+@media (max-width: 600px) {
+  .danger_input {
+    font-size: 13px;
+  }
+}
+
+.invalid_input {
+  display: none;
+  font-size: 16px;
+  color: #D08700;
+}
+@media (max-width: 600px) {
+  .invalid_input {
+    font-size: 13px;
+  }
+}
+
+.valid_input {
+  display: none;
+  font-size: 16px;
+  color: #46AC59;
+}
+@media (max-width: 600px) {
+  .valid_input {
+    font-size: 13px;
+  }
+}
+
+/*-- END --------------------------------------------------------------*/

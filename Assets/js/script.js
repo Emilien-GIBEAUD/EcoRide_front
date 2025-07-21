@@ -8,7 +8,7 @@ export const picturesUrl = "https://localhost/uploads/pictures/";
 // A voir pour gérer tout ça en automatique
 
 export const tokenCookieName = "accesstoken";
-// 2 méthodes pour créer et lire un token à l'aide des méthodes ---Cookie
+// Méthodes pour créer et lire un token à l'aide des méthodes ---Cookie
 export function setToken(token) {
     setCookie(tokenCookieName,token,7);
 }
@@ -22,14 +22,7 @@ export function getRole() {
     return getCookie(roleCookieName);
 }
 
-// Affichage des informations utilisateur dans le header
-if (isConnected()) {
-    const infos = await getInfoUser();
-    const userName = document.getElementById("userName");
-    userName.textContent = `${infos.firstName} connecté`
-}
-
-// 3 méthodes pour créer, lire et supprimer des cookies, à chercher sur internet
+// Méthodes pour créer, lire et supprimer des cookies, à chercher sur internet
 export function setCookie(name,value,days) {
     let expires = "";
     if (days) {
@@ -53,10 +46,16 @@ export function eraseCookie(name) {
     document.cookie = name +'=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
 }
 
-
 // Methode vérifiant si on est connecté
 export function isConnected(){
     return !(getToken() === null || getToken() === undefined);
+}
+
+// Affichage des informations utilisateur dans le header
+if (isConnected()) {
+    const infos = await getInfoUser();
+    const userName = document.getElementById("userName");
+    userName.textContent = `${infos.firstName} connecté`
 }
 
 /* Les roles    chercher dans l'API si des erreurs se produisent 

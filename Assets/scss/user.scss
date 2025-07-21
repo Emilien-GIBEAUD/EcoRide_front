@@ -1,0 +1,103 @@
+/* This file is served on these pages : signin, signup, account */
+@import 'variables';
+@import 'functions';
+@import 'mixins';
+
+/* START --------------------------------------------------------------*/
+
+.user {
+    padding: 0;
+    max-width: 450px;
+	@media (max-width: $brp_s) {
+		max-width: 350px;
+	}
+    .sub_menu {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+        padding: 5px;
+        gap: 10px;
+        border-top-left-radius: #{$border_radius_int - 1}px;
+        border-top-right-radius: #{$border_radius_int - 1}px;
+        background-color: $prim;
+        border-bottom: solid thin $black;
+        @media (max-width: $brp_s) {
+            padding: 3px;
+            gap: 5px;
+            border-top-left-radius: #{$border_radius_int_xs - 1}px;
+            border-top-right-radius: #{$border_radius_int_xs - 1}px;
+        }
+        a {	
+            font-size: $menu;
+            @media (max-width: $brp_s) {
+                font-size: $menu_xs;
+            }
+        }
+        .menu_btn {
+            @include menu_btn-style;
+            width: 85px;
+            height: 50px;
+            @media (max-width: $brp_s) {
+                border-radius: 8px;
+                width: 66px;
+                height: 44px;
+            }
+            img{
+                position: relative;
+                height: 30px;
+                @media (max-width: $brp_s) {
+                    height: 25px;
+                }
+            }
+        }
+    }
+    .sub_page {
+        display: flex;
+        flex-direction: column;
+        padding: $padding;
+        gap: $gap_form;
+        align-items: center;
+        width: 100%;
+        @media (max-width: $brp_s) {
+            padding: $padding_xs;
+            gap: $gap_form_xs;
+        }
+        form {
+            @include forme-style;
+        }
+    }
+}
+
+.sign {
+    align-content: center;
+    max-width: 450px;
+	@media (max-width: $brp_s) {
+		max-width: 350px;
+	}
+    form {
+        @include forme-style;
+    }
+}
+
+@mixin input_feedback{
+    display: none; // COMMENT FOR DEBUG COMMENT FOR DEBUG COMMENT FOR DEBUG
+    font-size: $text;
+	@media (max-width: $brp_s) {
+		font-size: $text_xs;
+	}
+}
+
+.danger_input{
+    @include input_feedback;
+    color: $danger;
+}
+.invalid_input{
+    @include input_feedback;
+    color: $warning;
+}
+.valid_input {
+    @include input_feedback;
+    color: $green;
+}
+/*-- END --------------------------------------------------------------*/

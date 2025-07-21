@@ -1,5 +1,6 @@
-@charset "UTF-8";
-/* DEBUT partie générale ----------------------------------------------*/
+/* Main css file for the EcoRide project
+-  This file is served on all pages */
+/* START generic ------------------------------------------------------*/
 * { /* RESET */
   margin: 0;
   padding: 0;
@@ -57,14 +58,15 @@ body {
   }
 }
 
-/*-- FIN partie générale ----------------------------------------------*/
-/* DEBUT HEADER -------------------------------------------------------*/
+/*-- END generic ------------------------------------------------------*/
+/* START HEADER -------------------------------------------------------*/
 header {
   display: flex;
   background-color: #D38228;
   border: solid thin #000000;
   position: sticky;
   top: 0;
+  z-index: 10;
 }
 @media (orientation: landscape) {
   header {
@@ -168,20 +170,33 @@ header nav a {
 }
 header nav .menu_btn {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
   border: solid thin #000000;
   border-radius: 10px;
-  width: 90px;
-  height: 64px;
   padding: 3px;
   background-color: #D0A370;
   text-align: center;
   cursor: pointer;
   transition: all 0.3s ease;
+  width: 90px;
+  height: 64px;
 }
 @media (max-width: 600px) {
   header nav .menu_btn {
     border-radius: 8px;
     width: 66px;
+  }
+}
+header nav .menu_btn:hover {
+  transform: scale(1.05);
+}
+header nav .menu_btn:active {
+  transform: scale(1);
+}
+@media (max-width: 600px) {
+  header nav .menu_btn {
     height: 45px;
   }
 }
@@ -198,41 +213,31 @@ header nav .menu_btn {
 }
 @media (orientation: portrait) and (max-width: 600px) {
   header nav .menu_btn {
-    height: 43px;
+    height: 45px;
   }
-}
-header nav .menu_btn .stretched-link {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
 }
 header nav .menu_btn img {
   position: relative;
-  top: 15px;
-  height: 40px;
 }
-@media (orientation: portrait) {
+@media (orientation: landscape) {
   header nav .menu_btn img {
-    position: relative;
-    top: 9px;
-    height: 30px;
+    height: 40px;
   }
 }
-@media (max-width: 600px) {
+@media (orientation: landscape) and (max-width: 600px) {
   header nav .menu_btn img {
-    position: relative;
-    top: 12px;
     height: 25px;
   }
 }
-header nav .menu_btn:hover {
-  transform: scale(1.05);
+@media (orientation: portrait) {
+  header nav .menu_btn img {
+    height: 30px;
+  }
 }
-header nav .menu_btn:active {
-  transform: scale(1);
+@media (orientation: portrait) and (max-width: 600px) {
+  header nav .menu_btn img {
+    height: 25px;
+  }
 }
 @media (max-width: 380px) {
   header nav .menu_home {
@@ -260,8 +265,8 @@ header nav .menu_btn:active {
   }
 }
 
-/*-- FIN HEADER -------------------------------------------------------*/
-/* DEBUT <button>, <input> & <a> --------------------------------------*/
+/*-- END HEADER -------------------------------------------------------*/
+/* START <button>, <input> & <a> --------------------------------------*/
 .btn {
   display: inline-block;
   color: #000000;
@@ -330,6 +335,18 @@ input[type=date]:valid {
   color: #000000;
 }
 
+.stretched-link {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  z-index: 1;
+}
+
 .visually_hidden {
   position: absolute !important;
   width: 1px !important;
@@ -355,12 +372,13 @@ a:hover {
   text-decoration: none !important;
 }
 
-/*-- FIN <button>, <input> & <a> --------------------------------------*/
-/* DEBUT MAIN ---------------------------------------------------------*/
+/*-- END <button>, <input> & <a> --------------------------------------*/
+/* START MAIN ---------------------------------------------------------*/
 main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 25px;
   padding: 5px 10px;
 }
@@ -415,8 +433,8 @@ main .search_bar img {
   background-color: rgba(255, 222, 173, 0.95);
   border: solid thin #000000;
   border-radius: 25px;
-  gap: 5px;
   padding: 15px;
+  gap: 5px;
   margin-bottom: 20px;
   font-size: 16px;
   text-align: justify;
@@ -426,15 +444,15 @@ main .search_bar img {
 @media (max-width: 600px) {
   .container {
     border-radius: 15px;
-    gap: 2px;
     padding: 8px;
+    gap: 2px;
     margin-bottom: 10px;
     font-size: 13px;
   }
 }
 
-/*-- FIN MAIN ---------------------------------------------------------*/
-/* DEBUT FOOTER -------------------------------------------------------*/
+/*-- END MAIN ---------------------------------------------------------*/
+/* START FOOTER -------------------------------------------------------*/
 footer {
   flex-grow: 1;
   position: sticky;
@@ -444,6 +462,7 @@ footer {
   padding: 5px 25px;
   background-color: #D38228;
   border: solid thin #000000;
+  z-index: 10;
 }
 @media (max-width: 600px) {
   footer {
@@ -452,4 +471,4 @@ footer {
   }
 }
 
-/*-- FIN FOOTER -------------------------------------------------------*/
+/*-- END FOOTER -------------------------------------------------------*/
