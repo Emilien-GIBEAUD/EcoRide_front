@@ -3,10 +3,53 @@
         <!-- Injecté depuis sub_menu.html -->
     </nav>
     <div class="sub_page">
-        <h1>Page conducteur</h1>
         <p>Page en cours de construction...</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, quos. Ipsum ea veniam dolore tenetur voluptatibus, voluptate excepturi laboriosam, repellat voluptates libero, ratione quas laudantium? Optio alias ratione odio cupiditate totam inventore minima quidem deleniti incidunt iusto quis reprehenderit, in aliquid perferendis magni architecto reiciendis nostrum earum corporis. Dolor, aliquam.</p>
+        <h1>Page conducteur</h1>
+        <div id="driver_buttons">
+            <!-- Injecté depuis driver_buttons.html -->
+        </div>
+        <div class="sub_container">
+            <h2>Vos préférences</h2>
+            <form id="preferencesForm">
+                <fieldset class="radio_input">
+                    <legend>Fumeurs acceptés :</legend>
+                    <div>
+                        <input type="radio" id="huey" name="smoker" value="oui" />
+                        <label for="huey">Oui</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="louie" name="smoker" value="non" checked />
+                        <label for="louie">Non</label>
+                    </div>
+                </fieldset>
+                <fieldset class="radio_input">
+                    <legend>Animaux acceptés :</legend>
+                    <div>
+                        <input type="radio" id="huey" name="animal" value="oui" />
+                        <label for="huey">Oui</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="louie" name="animal" value="non" checked />
+                        <label for="louie">Non</label>
+                    </div>
+                </fieldset>
+                <div class="form_input">
+                    <label for="otherPreferences">Autres préférences :</label>
+                    <input type="text" id="otherPreferences" placeholder="Vos autres préférences" name="otherPreferences">
+                </div>
+                <div>
+                    <button type="button" class="btn" id="btnPreferences">Appliquer</button>
+                </div>
+            </form>
+        </div>
+        <div class="sub_container">
+            <h2>Votre véhicule principale</h2>
+            <p>En cours de construction...</p>
+            <div>
+                <a href="/car_list" class="btn btn_link">Vos véhicules</a>
+                <a href="/car_add" class="btn btn_link">Ajouter un véhicule</a>
+            </div>
+        </div>
     </div>
-
 </div>
 

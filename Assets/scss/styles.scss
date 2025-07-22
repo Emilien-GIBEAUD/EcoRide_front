@@ -14,12 +14,24 @@
 }
 
 h1 {
-	margin: 0;
-	padding: 0;
 	font-size: $title;
 	color: $black;
+	padding: 10px 0;
 	@media (max-width: $brp_s) {
 		font-size: $title_xs;
+		padding: 5px 0;
+	}
+}
+
+h2 {
+	font-size: $title2;
+	font-style: italic;
+	color: $black;
+	padding: 8px 0;
+	width: 100%;
+	@media (max-width: $brp_s) {
+		font-size: $title2_xs;
+		padding: 4px 0;
 	}
 }
 
@@ -227,6 +239,18 @@ header {
     transform: scale(1);
 }
 
+select {
+	@include btn_inp-style;
+    background-color: $quat;
+	padding: 7px;
+	@media (max-width: $brp_s) {
+		padding: 4px;
+	}
+	@media (max-width: $brp_xs) {
+		padding: 4px 0;
+	}
+}
+
 input {
 	@include btn_inp-style;
     background-color: $quat;
@@ -343,6 +367,7 @@ main {
 	@media (max-width: $brp_s) {
 		border-radius: #{$border_radius_int_xs}px;
 		padding: $padding_xs;
+		width: 95%;
 		gap: 2px;
 		margin-bottom: 10px;
 		font-size: $text_xs;

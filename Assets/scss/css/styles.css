@@ -10,14 +10,28 @@
 }
 
 h1 {
-  margin: 0;
-  padding: 0;
-  font-size: 20px;
+  font-size: 22px;
   color: #000000;
+  padding: 10px 0;
 }
-@media (max-width: 600px) {
+@media (max-width: 630px) {
   h1 {
     font-size: 18px;
+    padding: 5px 0;
+  }
+}
+
+h2 {
+  font-size: 20px;
+  font-style: italic;
+  color: #000000;
+  padding: 8px 0;
+  width: 100%;
+}
+@media (max-width: 630px) {
+  h2 {
+    font-size: 16px;
+    padding: 4px 0;
   }
 }
 
@@ -38,7 +52,7 @@ body {
     grid-template-rows: 1fr 30px;
   }
 }
-@media (orientation: landscape) and (max-width: 600px) {
+@media (orientation: landscape) and (max-width: 630px) {
   body {
     grid-template-columns: 70px 1fr;
     grid-template-rows: 1fr 23px;
@@ -51,7 +65,7 @@ body {
     grid-template-rows: 65px 1fr 30px;
   }
 }
-@media (orientation: portrait) and (max-width: 600px) {
+@media (orientation: portrait) and (max-width: 630px) {
   body {
     grid-template-columns: 1fr;
     grid-template-rows: 50px 1fr 23px;
@@ -95,12 +109,12 @@ header .logo {
     margin-bottom: 0;
   }
 }
-@media (orientation: portrait) and (max-width: 600px) {
+@media (orientation: portrait) and (max-width: 630px) {
   header .logo {
     width: 60px;
   }
 }
-@media (orientation: portrait) and (max-width: 380px) {
+@media (orientation: portrait) and (max-width: 400px) {
   header .logo {
     width: 54px;
   }
@@ -108,7 +122,7 @@ header .logo {
 header .logo .logo_icon {
   height: 80px;
 }
-@media (max-width: 600px) {
+@media (max-width: 630px) {
   header .logo .logo_icon {
     height: 55px;
   }
@@ -119,7 +133,7 @@ header .logo .logo_icon {
     height: 65px;
   }
 }
-@media (orientation: portrait) and (max-width: 600px) {
+@media (orientation: portrait) and (max-width: 630px) {
   header .logo .logo_icon {
     height: 48px;
   }
@@ -134,7 +148,7 @@ header nav {
     gap: 10px;
   }
 }
-@media (orientation: landscape) and (max-width: 600px) {
+@media (orientation: landscape) and (max-width: 630px) {
   header nav {
     gap: 5px;
   }
@@ -149,7 +163,7 @@ header nav {
     gap: 10px;
   }
 }
-@media (orientation: portrait) and (max-width: 600px) {
+@media (orientation: portrait) and (max-width: 630px) {
   header nav {
     padding-right: 5px;
     gap: 5px;
@@ -158,7 +172,7 @@ header nav {
 header nav a {
   font-size: 14px;
 }
-@media (max-width: 600px) {
+@media (max-width: 630px) {
   header nav a {
     font-size: 11px;
   }
@@ -183,7 +197,7 @@ header nav .menu_btn {
   width: 90px;
   height: 64px;
 }
-@media (max-width: 600px) {
+@media (max-width: 630px) {
   header nav .menu_btn {
     border-radius: 8px;
     width: 66px;
@@ -195,12 +209,12 @@ header nav .menu_btn:hover {
 header nav .menu_btn:active {
   transform: scale(1);
 }
-@media (max-width: 600px) {
+@media (max-width: 630px) {
   header nav .menu_btn {
     height: 45px;
   }
 }
-@media (max-width: 380px) {
+@media (max-width: 400px) {
   header nav .menu_btn {
     border-radius: 5px;
   }
@@ -211,7 +225,7 @@ header nav .menu_btn:active {
     height: 55px;
   }
 }
-@media (orientation: portrait) and (max-width: 600px) {
+@media (orientation: portrait) and (max-width: 630px) {
   header nav .menu_btn {
     height: 45px;
   }
@@ -224,7 +238,7 @@ header nav .menu_btn img {
     height: 40px;
   }
 }
-@media (orientation: landscape) and (max-width: 600px) {
+@media (orientation: landscape) and (max-width: 630px) {
   header nav .menu_btn img {
     height: 25px;
   }
@@ -234,32 +248,32 @@ header nav .menu_btn img {
     height: 30px;
   }
 }
-@media (orientation: portrait) and (max-width: 600px) {
+@media (orientation: portrait) and (max-width: 630px) {
   header nav .menu_btn img {
     height: 25px;
   }
 }
-@media (max-width: 380px) {
+@media (max-width: 400px) {
   header nav .menu_home {
     width: 44px;
   }
 }
-@media (max-width: 380px) {
+@media (max-width: 400px) {
   header nav .menu_carpool {
     width: 68px;
   }
 }
-@media (max-width: 380px) {
+@media (max-width: 400px) {
   header nav .menu_login {
     width: 61px;
   }
 }
-@media (max-width: 380px) {
+@media (max-width: 400px) {
   header nav .menu_account {
     width: 48px;
   }
 }
-@media (max-width: 380px) {
+@media (max-width: 400px) {
   header nav .menu_contact {
     width: 48px;
   }
@@ -281,7 +295,7 @@ header nav .menu_btn img {
   cursor: pointer;
   transition: all 0.3s ease;
 }
-@media (max-width: 600px) {
+@media (max-width: 630px) {
   .btn {
     padding: 5px 8px;
     border-radius: 8px;
@@ -297,6 +311,37 @@ header nav .menu_btn img {
   transform: scale(1);
 }
 
+select {
+  display: inline-block;
+  color: #000000;
+  opacity: 1;
+  border: solid thin #000000;
+  border-radius: 10px;
+  padding: 8px 10px;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 16px;
+  background-color: #FFF8DC;
+  padding: 7px;
+}
+@media (max-width: 630px) {
+  select {
+    padding: 5px 8px;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+}
+@media (max-width: 630px) {
+  select {
+    padding: 4px;
+  }
+}
+@media (max-width: 400px) {
+  select {
+    padding: 4px 0;
+  }
+}
+
 input {
   display: inline-block;
   color: #000000;
@@ -309,7 +354,7 @@ input {
   font-size: 16px;
   background-color: #FFF8DC;
 }
-@media (max-width: 600px) {
+@media (max-width: 630px) {
   input {
     padding: 5px 8px;
     border-radius: 8px;
@@ -382,7 +427,7 @@ main {
   gap: 25px;
   padding: 5px 10px;
 }
-@media (max-width: 600px) {
+@media (max-width: 630px) {
   main {
     gap: 5px;
     padding: 2px 5px;
@@ -396,7 +441,7 @@ main .search_bar {
   gap: 0 5px;
   padding: 5px 10px;
 }
-@media (max-width: 600px) {
+@media (max-width: 630px) {
   main .search_bar {
     gap: 0 2px;
     padding: 2px 5px;
@@ -409,7 +454,7 @@ main .search_bar .inputs {
   flex-wrap: wrap;
   gap: 5px 10px;
 }
-@media (max-width: 600px) {
+@media (max-width: 630px) {
   main .search_bar .inputs {
     gap: 2px 5px;
   }
@@ -441,10 +486,11 @@ main .search_bar img {
   -moz-text-align-last: left;
        text-align-last: left;
 }
-@media (max-width: 600px) {
+@media (max-width: 630px) {
   .container {
     border-radius: 15px;
     padding: 8px;
+    width: 95%;
     gap: 2px;
     margin-bottom: 10px;
     font-size: 13px;
@@ -464,7 +510,7 @@ footer {
   border: solid thin #000000;
   z-index: 10;
 }
-@media (max-width: 600px) {
+@media (max-width: 630px) {
   footer {
     font-size: 13px;
     padding: 2px 10px;
