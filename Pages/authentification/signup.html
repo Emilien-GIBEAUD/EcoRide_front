@@ -1,9 +1,9 @@
 <div class="container sign">
     <h1>Inscription</h1>
-    <form id="suscribeForm">
+    <form id="subscribeForm">
         <div class="form_input">
             <label for="firstNameSignup">Prénom *</label>
-            <input type="text" id="firstNameSignup" placeholder="Votre prénom" name="firstNameSignup">
+            <input type="text" id="firstNameSignup" placeholder="Votre prénom" name="firstName">
             <div class="invalid_input">
                 * Prénom requis
             </div>
@@ -11,7 +11,7 @@
         
         <div class="form_input">
             <label for="nameSignup">Nom *</label>
-            <input type="text" id="nameSignup" placeholder="Votre nom" name="nameSignup">
+            <input type="text" id="nameSignup" placeholder="Votre nom" name="lastName">
             <div class="invalid_input">
                 * Nom requis
             </div>
@@ -19,23 +19,26 @@
 
         <div class="form_input">
             <label for="pseudoSignup">Pseudo *</label>
-            <input type="text" id="pseudoSignup" placeholder="Votre pseudo" name="pseudoSignup">
+            <input type="text" id="pseudoSignup" placeholder="Votre pseudo" name="pseudo">
             <div class="invalid_input">
                 * Pseudo requis
             </div>
         </div>
 
         <div class="form_input">
-            <label for="avatar_name">Image de profil (format jpg, jpeg, png ou webp)</label>
-            <input type="file" name="avatar_name" id="avatar_name">
+            <label for="avatar_nameSignup">Image de profil</label>
+            <input type="file" id="avatar_nameSignup" name="avatar_file">
+            <div class="valid_input">
+                Image valide
+            </div>
             <div class="danger_input">
-                --- Messages JavaScript à programmer ---
+                image au format jpg, jpeg, png ou webp d'une taille maximum de 0,5 Mo.
             </div>
         </div>
 
         <div class="form_input">
             <label for="emailSignup">Courriel *</label>
-            <input type="email" id="emailSignup" placeholder="Votre courriel" name="emailSignup">
+            <input type="email" id="emailSignup" placeholder="Votre courriel" name="email">
             <div class="invalid_input">
                 Courriel invalide
             </div>
@@ -43,33 +46,30 @@
 
         <div class="form_input">
             <label for="pswSignup">Mot de passe *</label>
-            <input type="password" id="pswSignup" placeholder="Votre mot de passe" name="pswSignup">
-            <div class="danger_input">
-                Mot de passe trop faible
-            </div>
-            <div class="invalid_input">
-                Mot de passe invalide : Le mot de passe doit contenir au moins 12 caractères, dont 1 minuscule, 1 majuscule, 1 chiffre et 1 caractère spécial.
-            </div>
+            <input type="password" id="pswSignup" placeholder="Votre mot de passe" name="password">
             <div class="valid_input">
                 Mot de passe valide
+            </div>
+            <div class="danger_input">
+                Mot de passe invalide : Le mot de passe doit contenir au moins 12 caractères, dont 1 minuscule, 1 majuscule, 1 chiffre et 1 caractère spécial.
             </div>
         </div>
 
         <div class="form_input">
             <label for="pswConfirmSignup">Confirmer votre mot de passe *</label>
-            <input type="password" id="pswConfirmSignup" placeholder="Confirmez votre mot de passe" name="pswSignup">
-            <div class="invalid_input">
-                Mots de passe saisis différents
-            </div>
+            <input type="password" id="pswConfirmSignup" placeholder="Confirmez votre mot de passe" name="passwordConfirm">
             <div class="valid_input">
                 Mots de passe saisis identiques
+            </div>
+            <div class="invalid_input">
+                Mots de passe saisis différents
             </div>
         </div>
 
         <p class="info">* La saisie de ces données est obligatoire.</p>
 
         <div>
-            <button type="button" class="btn" id="btnSuscribe">Inscription</button>
+            <button type="button" class="btn" id="btnSubscribe">Inscription</button>
         </div><br>
         <p>Vous avez déjà un compte ?</p>
         <div>

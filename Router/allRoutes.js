@@ -5,7 +5,7 @@ export const allRoutes = [
     new Route("/", "Accueil", "/Pages/home.html", [], "", "/Assets/scss/css/home.css"),
     new Route("/carpool", "Covoiturage", "/Pages/carpool.html", [], "", "/Assets/scss/css/carpool.css"),
     new Route("/signin", "Connexion", "/Pages/Authentification/signin.html", ["disconnected"], "", "/Assets/scss/css/user.css"),// /Assets/js/Authentification/signin.js
-    new Route("/signup", "Inscription", "/Pages/Authentification/signup.html", ["disconnected"], "", "/Assets/scss/css/user.css"),// /Assets/js/Authentification/signup.js
+    new Route("/signup", "Inscription", "/Pages/Authentification/signup.html", ["disconnected"], "/Assets/js/Authentification/signup.js", "/Assets/scss/css/user.css"),
     // new Route("/signout", "Deconnexion", "/Pages/Authentification/signout.html", ["ROLE_ADMIN", "ROLE_USER"], "/Assets/js/Authentification/signout.js"),
     // new Route("/account", "Mon compte", "/Pages/Authentification/account.html", ["disconnected"], "", "/Assets/scss/css/user.css"),// ["ROLE_ADMIN", "ROLE_USER"]
     new Route("/user", "Mon compte", "/Pages/Account/user.html", ["disconnected"], "", "/Assets/scss/css/user.css"),// ["ROLE_ADMIN", "ROLE_USER"]

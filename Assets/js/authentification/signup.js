@@ -1,120 +1,96 @@
-import { apiUrl, sanityzeHTML } from '../script.js';
+import { apiUrl } from '../script.js';
+import { checkEmail, checkIfInputNonEmpty, checkPSW, checkPSWConfirm, escapeHTML, verifyPicture }from '../Tools/tools.js';
 
+const maxSizeAvatar = 0.5 ;  // Taille max des images pouvant être envoyées (en Mo)
+
+const firstNameSignup = document.getElementById("firstNameSignup");
 const nameSignup = document.getElementById("nameSignup");
-const firstnameSignup = document.getElementById("firstnameSignup");
+const pseudoSignup = document.getElementById("pseudoSignup");
+const avatar_nameSignup = document.getElementById("avatar_nameSignup");
 const emailSignup = document.getElementById("emailSignup");
 const pswSignup = document.getElementById("pswSignup");
 const pswConfirmSignup = document.getElementById("pswConfirmSignup");
-const btnSuscribe = document.getElementById("btnSuscribe");
-const suscribeForm = document.getElementById("suscribeForm");
+const btnSubscribe = document.getElementById("btnSubscribe");
+const subscribeForm = document.getElementById("subscribeForm");
 
-btnSuscribe.disabled = true;
+btnSubscribe.disabled = true;
 
 // Vérification du formulaire saisi
+firstNameSignup.addEventListener("keyup", checkInputs);
 nameSignup.addEventListener("keyup", checkInputs);
-firstnameSignup.addEventListener("keyup", checkInputs);
+pseudoSignup.addEventListener("keyup", checkInputs);
 emailSignup.addEventListener("keyup", checkInputs);
 pswSignup.addEventListener("keyup", checkInputs);
 pswConfirmSignup.addEventListener("keyup", checkInputs);
 
+avatar_nameSignup.addEventListener("change", checkAvatarFile);
+
 // Envoie du formulaire
-btnSuscribe.addEventListener("click", userSuscription);
+btnSubscribe.addEventListener("click", userSubscription);
 
 // Fonction qui vérifie tous les inputs
 function checkInputs(){
-    const nameOK = checkOneInput(nameSignup);
-    const firstnameOK = checkOneInput(firstnameSignup);
+    const nameOK = checkIfInputNonEmpty(nameSignup);
+    const firstNameOK = checkIfInputNonEmpty(firstNameSignup);
+    const pseudoOK = checkIfInputNonEmpty(pseudoSignup);
     const emailOK = checkEmail(emailSignup);
     const pswOK = checkPSW(pswSignup);
     const pswConfirmOK = checkPSWConfirm(pswSignup,pswConfirmSignup);
 
-    if(nameOK && firstnameOK && emailOK && pswOK && pswConfirmOK){
-        btnSuscribe.disabled = false;
+    if(nameOK && firstNameOK && pseudoOK && emailOK && pswOK && pswConfirmOK){
+        btnSubscribe.disabled = false;
     } else {
-        btnSuscribe.disabled = true;
+        btnSubscribe.disabled = true;
     }
 }
 
-// Fonction qui vérifie si un input est vide
-function checkOneInput(input) {
-    if(input.value !== ""){
-        input.classList.add("is-valid");
-        input.classList.remove("is-invalid");
-        return true;
-    } else {
-        input.classList.remove("is-valid");
-        input.classList.add("is-invalid");
-        return false;
+// Fonction qui vérifie le fichier avatar
+function checkAvatarFile(){
+    if (avatar_nameSignup.files.length === 0) { // OK si aucun fichier n'est sélectionné
+        avatar_nameSignup.classList.remove("is-valid", "is-danger");
+        return;
     }
-}
-
-// Fonction qui vérifie que le mail est valide
-function checkEmail(input) {
-    // définition de la regex du mail :
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    const userEmail = input.value;
-    if(userEmail.match(emailRegex)){
-        input.classList.add("is-valid");
-        input.classList.remove("is-invalid");
-        return true;
+    const isValid = verifyPicture(avatar_nameSignup, maxSizeAvatar);
+    if (isValid) {
+        avatar_nameSignup.classList.add("is-valid");
+        avatar_nameSignup.classList.remove("is-danger");
+        btnSubscribe.disabled = false;
     } else {
-        input.classList.remove("is-valid");
-        input.classList.add("is-invalid");
-        return false;
-    }
-}
-
-// Fonction qui vérifie les mots de passe
-function checkPSW(input){
-    // définition de la regex du mot de passe
-    const PSWRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_])[A-Za-z\d\W_]{8,}$/;
-    const userPSW = input.value;
-    if(userPSW.match(PSWRegex)){
-        input.classList.add("is-valid");
-        input.classList.remove("is-invalid");
-        return true;
-    } else {
-        input.classList.remove("is-valid");
-        input.classList.add("is-invalid");
-        return false;
-    }
-}
-
-// Fonction qui vérifie que les mots de passe saisis sont identiques
-function checkPSWConfirm(input1,input2){
-    if(input1.value === input2.value){
-        input2.classList.add("is-valid");
-        input2.classList.remove("is-invalid");
-        return true;
-    } else {
-        input2.classList.remove("is-valid");
-        input2.classList.add("is-invalid");
-        return false;
+        avatar_nameSignup.classList.remove("is-valid");
+        avatar_nameSignup.classList.add("is-danger");
+        btnSubscribe.disabled = true;
     }
 }
 
 // Fonction qui inscrit un utilisateur
-function userSuscription(){
-    const formData = new FormData(suscribeForm);
+function userSubscription(){
+    const formData = new FormData(subscribeForm);
     
     const myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
 
-    const raw = JSON.stringify({
-        firstName: sanityzeHTML(formData.get("firstnameSignup")),
-        lastName: sanityzeHTML(formData.get("nameSignup")),
-        email: sanityzeHTML(formData.get("emailSignup")),
-        password: sanityzeHTML(formData.get("pswSignup"))
-    });
+    // Echape le HTML des inputs
+    const firstNameForm = escapeHTML(formData.get("firstName"));
+    formData.set("firstName",firstNameForm);
+    const NameForm = escapeHTML(formData.get("lastName"));
+    formData.set("lastName",NameForm);
+    const pseudoForm = escapeHTML(formData.get("pseudo"));
+    formData.set("pseudo",pseudoForm);
+    const emailForm = escapeHTML(formData.get("email"));
+    formData.set("email",emailForm);
+    const pswForm = escapeHTML(formData.get("password"));
+    formData.set("password",pswForm);
+
 
     const requestOptions = {
         method: "POST",
         headers: myHeaders,
-        body: raw,
+        body: formData,
         redirect: "follow",
     };
 
-    fetch(apiUrl + "registration", requestOptions)
+    console.log(formData);
+    fetch(apiUrl + "user/registration", requestOptions)
         .then(response => {
             if (response.ok) {
                 return response.json();
@@ -123,11 +99,12 @@ function userSuscription(){
             }
         })
         .then(result => {
-            alert("Bravo " + formData.get("firstnameSignup") + ", vous êtes maintenant inscrit.");
+            alert("Bravo " + formData.get("pseudoSignup") + ", vous êtes maintenant inscrit.");
             document.location.href="/signin";
         })
         .catch(error => {
             alert(error.message);
             console.error(error);
-        });
+        }
+    );
 }

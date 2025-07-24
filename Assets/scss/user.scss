@@ -81,7 +81,7 @@
 }
 
 @mixin input_feedback{
-    display: none; // COMMENT FOR DEBUG COMMENT FOR DEBUG COMMENT FOR DEBUG
+    display: none; // COMMENT FOR DEBUG
     font-size: $text;
 	@media (max-width: $brp_s) {
 		font-size: $text_xs;
@@ -99,5 +99,12 @@
 .valid_input {
     @include input_feedback;
     color: $green;
+}
+
+// Affichage conditionnel des feedbacks
+.is-valid ~ .valid_input, 
+.is-invalid ~ .invalid_input, 
+.is-danger ~ .danger_input {
+    display: block;
 }
 /*-- END --------------------------------------------------------------*/

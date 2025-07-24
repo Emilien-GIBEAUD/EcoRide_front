@@ -1,10 +1,10 @@
 // // en local :
 // export const apiUrl = "https://127.0.0.1:8000/api/";
-// export const picturesUrl = "https://127.0.0.1:8000/uploads/pictures/";
+// export const avatarsUrl = "https://127.0.0.1:8000/uploads/avatars/";
 
 // avec docker (remplacer localhost par le nom de domaine sauf erreur de ma part)
 export const apiUrl = "https://localhost/api/";
-export const picturesUrl = "https://localhost/uploads/pictures/";
+export const avatarsUrl = "https://localhost/uploads/avatars/";
 // A voir pour gérer tout ça en automatique
 
 export const tokenCookieName = "accesstoken";
@@ -97,12 +97,6 @@ export function showHideForRoles(){
     })
 }
 
-export function sanityzeHTML(text){
-    const tempHtml = document.createElement("div");
-    tempHtml.textContent = text;
-    return tempHtml.innerHTML;
-}
-
 async function getInfoUser(){
     const myHeaders = new Headers();
     myHeaders.append("X-AUTH-TOKEN", getToken());
@@ -124,5 +118,6 @@ async function getInfoUser(){
         })
         .catch(error => {
             console.error(error);
-        });
+        }
+    );
 }
