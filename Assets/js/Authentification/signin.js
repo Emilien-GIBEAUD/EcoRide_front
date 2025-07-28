@@ -1,10 +1,10 @@
-import { setToken, setCookie, roleCookieName, apiUrl, sanityzeHTML } from '../script.js';
+import { setToken, setCookie, roleCookieName, apiUrl } from '../script.js';
+import { escapeHTML }from '../Tools/tools.js';
 
 // gestion de la connexion
-// On utilise bien des var au cas ou l'utilisateur quitte puis revient sur la page, à voir si il est possible de gérer cela autrement.
-var emailInput = document.getElementById("emailInput");
-var pswInput = document.getElementById("pswInput");
-var btnSignin = document.getElementById("btnSignin");
+const emailInput = document.getElementById("emailSignin");
+const pswInput = document.getElementById("pswSignin");
+const btnSignin = document.getElementById("btnSignin");
 const signinForm = document.getElementById("signinForm");
 
 btnSignin.addEventListener("click", checkCredentials);
@@ -17,8 +17,8 @@ function checkCredentials(){
     myHeaders.append("Content-Type", "application/json");
 
     const raw = JSON.stringify({
-        username: sanityzeHTML(formData.get("emailInput")),
-        password: sanityzeHTML(formData.get("pswInput"))
+        username: escapeHTML(formData.get("emailSignin")),
+        password: escapeHTML(formData.get("pswSignin"))
     });
 
     const requestOptions = {
@@ -28,7 +28,7 @@ function checkCredentials(){
         redirect: "follow",
     };
 
-    fetch(apiUrl + "login", requestOptions)
+    fetch(apiUrl + "user/login", requestOptions)
         .then(response => {
             if (response.ok) {
                 return response.json();

@@ -51,12 +51,12 @@ export function isConnected(){
     return !(getToken() === null || getToken() === undefined);
 }
 
-// Affichage des informations utilisateur dans le header
-if (isConnected()) {
-    const infos = await getInfoUser();
-    const userName = document.getElementById("userName");
-    userName.textContent = `${infos.firstName} connecté`
-}
+// // Affichage des informations utilisateur dans le header
+// if (isConnected()) {
+//     const infos = await getInfoUser();
+//     const userName = document.getElementById("userName");
+//     userName.textContent = `${infos.firstName} connecté`
+// }
 
 /* Les roles    chercher dans l'API si des erreurs se produisent 
 disconnected
@@ -75,22 +75,22 @@ export function showHideForRoles(){
         switch(element.dataset.show){
             case "disconnected":
                 if(userConnected){
-                    element.classList.add("d-none");
+                    element.classList.add("d_none");
                 }
                 break;
             case "connected":
                 if(!userConnected){
-                    element.classList.add("d-none");
+                    element.classList.add("d_none");
                 }
                 break;
             case "admin":
                 if(!userConnected || role !== "ROLE_ADMIN"){
-                    element.classList.add("d-none");
+                    element.classList.add("d_none");
                 }
                 break;
             case "user":
                 if(!userConnected || role !== "ROLE_USER"){
-                    element.classList.add("d-none");
+                    element.classList.add("d_none");
                 }
                 break;
         }
@@ -107,7 +107,7 @@ async function getInfoUser(){
         redirect: "follow",
     };
 
-    return fetch(apiUrl + "me", requestOptions)
+    return fetch(apiUrl + "user/me", requestOptions)
         .then(response => {
             if (response.ok) {
                 return response.json();

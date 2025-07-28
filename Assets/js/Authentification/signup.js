@@ -65,9 +65,9 @@ function checkAvatarFile(){
 // Fonction qui inscrit un utilisateur
 function userSubscription(){
     const formData = new FormData(subscribeForm);
-    
-    const myHeaders = new Headers();
-    myHeaders.append("Content-Type", "application/json");
+    formData.delete('passwordConfirm'); // Suppression du champ de confirmation du mot de passe (pas envoyé en BDD)
+
+    // Header généré par le navigateur pour un 'Content-Type': 'multipart/form-data
 
     // Echape le HTML des inputs
     const firstNameForm = escapeHTML(formData.get("firstName"));
@@ -84,12 +84,10 @@ function userSubscription(){
 
     const requestOptions = {
         method: "POST",
-        headers: myHeaders,
         body: formData,
         redirect: "follow",
     };
 
-    console.log(formData);
     fetch(apiUrl + "user/registration", requestOptions)
         .then(response => {
             if (response.ok) {
@@ -99,7 +97,7 @@ function userSubscription(){
             }
         })
         .then(result => {
-            alert("Bravo " + formData.get("pseudoSignup") + ", vous êtes maintenant inscrit.");
+            alert("Bravo " + formData.get("pseudo") + ", vous êtes maintenant inscrit.");
             document.location.href="/signin";
         })
         .catch(error => {
