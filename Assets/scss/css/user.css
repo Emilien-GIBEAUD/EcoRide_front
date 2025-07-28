@@ -326,4 +326,10 @@
   }
 }
 
+.is-valid ~ .valid_input,
+.is-invalid ~ .invalid_input,
+.is-danger ~ .danger_input {
+  display: block;
+}
+
 /*-- END --------------------------------------------------------------*/

@@ -1,10 +1,10 @@
 // // en local :
 // export const apiUrl = "https://127.0.0.1:8000/api/";
-// export const picturesUrl = "https://127.0.0.1:8000/uploads/pictures/";
+// export const avatarsUrl = "https://127.0.0.1:8000/uploads/avatars/";
 
 // avec docker (remplacer localhost par le nom de domaine sauf erreur de ma part)
 export const apiUrl = "https://localhost/api/";
-export const picturesUrl = "https://localhost/uploads/pictures/";
+export const avatarsUrl = "https://localhost/uploads/avatars/";
 // A voir pour gérer tout ça en automatique
 
 export const tokenCookieName = "accesstoken";
@@ -51,12 +51,12 @@ export function isConnected(){
     return !(getToken() === null || getToken() === undefined);
 }
 
-// Affichage des informations utilisateur dans le header
-if (isConnected()) {
-    const infos = await getInfoUser();
-    const userName = document.getElementById("userName");
-    userName.textContent = `${infos.firstName} connecté`
-}
+// // Affichage des informations utilisateur dans le header
+// if (isConnected()) {
+//     const infos = await getInfoUser();
+//     const userName = document.getElementById("userName");
+//     userName.textContent = `${infos.firstName} connecté`
+// }
 
 /* Les roles    chercher dans l'API si des erreurs se produisent 
 disconnected
@@ -75,32 +75,26 @@ export function showHideForRoles(){
         switch(element.dataset.show){
             case "disconnected":
                 if(userConnected){
-                    element.classList.add("d-none");
+                    element.classList.add("d_none");
                 }
                 break;
             case "connected":
                 if(!userConnected){
-                    element.classList.add("d-none");
+                    element.classList.add("d_none");
                 }
                 break;
             case "admin":
                 if(!userConnected || role !== "ROLE_ADMIN"){
-                    element.classList.add("d-none");
+                    element.classList.add("d_none");
                 }
                 break;
             case "user":
                 if(!userConnected || role !== "ROLE_USER"){
-                    element.classList.add("d-none");
+                    element.classList.add("d_none");
                 }
                 break;
         }
     })
-}
-
-export function sanityzeHTML(text){
-    const tempHtml = document.createElement("div");
-    tempHtml.textContent = text;
-    return tempHtml.innerHTML;
 }
 
 async function getInfoUser(){
@@ -113,7 +107,7 @@ async function getInfoUser(){
         redirect: "follow",
     };
 
-    return fetch(apiUrl + "me", requestOptions)
+    return fetch(apiUrl + "user/me", requestOptions)
         .then(response => {
             if (response.ok) {
                 return response.json();
@@ -124,5 +118,6 @@ async function getInfoUser(){
         })
         .catch(error => {
             console.error(error);
-        });
+        }
+    );
 }
