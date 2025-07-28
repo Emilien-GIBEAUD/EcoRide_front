@@ -7,7 +7,7 @@
         <form id="suscribeForm">
             <div class="form_input">
                 <label for="firstNameEdit">Prénom *</label>
-                <input type="text" id="firstNameEdit" placeholder="Votre prénom" name="firstNameEdit">
+                <input type="text" id="firstNameEdit" placeholder="Votre prénom" name="firstName">
                 <div class="invalid_input">
                     * Prénom requis
                 </div>
@@ -15,7 +15,7 @@
         
             <div class="form_input">
                 <label for="nameEdit">Nom *</label>
-                <input type="text" id="nameEdit" placeholder="Votre nom" name="nameEdit">
+                <input type="text" id="nameEdit" placeholder="Votre nom" name="name">
                 <div class="invalid_input">
                     * Nom requis
                 </div>
@@ -23,7 +23,7 @@
 
             <div class="form_input">
                 <label for="pseudoEdit">Pseudo *</label>
-                <input type="text" id="pseudoEdit" placeholder="Votre pseudo" name="pseudoEdit">
+                <input type="text" id="pseudoEdit" placeholder="Votre pseudo" name="pseudo">
                 <div class="invalid_input">
                     * Pseudo requis
                 </div>
@@ -31,10 +31,16 @@
 
             <div class="form_input">
                 <label for="avatar_name">Image de profil (format jpg, jpeg, png ou webp)</label>
-                <input type="file" name="avatar_name" id="avatar_name">
-                <div class="danger_input">
-                    --- Messages JavaScript à programmer ---
+                <input type="file" id="avatar_name" name="avatarFile">
+                <div class="valid_input">
+                    Image valide
                 </div>
+                <div class="danger_input">
+                    image au format jpg, jpeg, png ou webp d'une taille maximum de 0,5 Mo.
+                </div>
+            </div>
+            <div class="avatar_picture">
+                <img src="./Assets/icon/user.svg" alt="Avatar de l'utilisateur" />
             </div>
 
             <p class="info">* La saisie de ces données est obligatoire.</p>
@@ -42,9 +48,10 @@
             <fieldset>
                 <legend>Etes vous également conducteur ?</legend>
                 <div class="form_checkbox">
-                    <input type="checkbox" id="driver" name="driver" value="coding" />
+                    <input type="checkbox" id="driver" name="driver" value="driver"/>
                     <label for="driver">Conducteur</label>
                 </div>
+                <p class="info">Vous devrez ensuite saisir un véhicule dans votre page "Conducteur" avant de pouvoir poster un covoiturage.</p>
             </fieldset>
 
             <div>
