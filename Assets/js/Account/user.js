@@ -1,4 +1,4 @@
-import { apiUrl, getInfoUser, getToken, maxSizeAvatar } from '../script.js';
+import { apiUrl, avatarsUrl, getInfoUser, getToken, maxSizeAvatar } from '../script.js';
 import { checkIfInputNonEmpty, escapeHTML, verifyPicture }from '../Tools/tools.js';
 
 const firstNameEdit = document.getElementById("firstNameEdit");
@@ -9,26 +9,38 @@ const driverEdit = document.getElementById("driverEdit");
 const btnEdit = document.getElementById("btnEdit");
 const editForm = document.getElementById("editForm");
 let userData;
+let avatarFile;
 /**
  * Initialise la page avec les données de l'utilisateur.
  */
-export function initPage() {
-    loadUserData();
+export async function initPage() {
+    await loadUserData();
+    const avatarPicture = document.getElementById("avatar_picture");
+    avatarPicture.innerHTML = getAvatarFile();
 }
 
+// Fonction qui récupère les infos de l'utilisateur et les mets dans les inputs
 async function loadUserData() {
     try {
         userData = await getInfoUser();
         if (userData) {
-        firstNameEdit.value = userData.firstName;
-        nameEdit.value = userData.lastName;
-        pseudoEdit.value = userData.pseudo;
-        driverEdit.checked = userData.usageRole.includes('driver');
+            firstNameEdit.value = userData.firstName;
+            nameEdit.value = userData.lastName;
+            pseudoEdit.value = userData.pseudo;
+            driverEdit.checked = userData.usageRole.includes('driver');
+            avatarFile = userData.avatarFile;
         }
     } catch (error) {
         console.error("Erreur lors du chargement des données de l'utilisateur:", error);
     }
-};
+}
+
+// Fonction qui récupère les infos de l'utilisateur et les mets dans les inputs
+function getAvatarFile() {
+        return `
+            <img src="${avatarsUrl + avatarFile}" alt="Avatar de l'utilisateur" />
+        `;
+}
 
 btnEdit.disabled = true;
 

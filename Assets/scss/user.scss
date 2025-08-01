@@ -164,6 +164,10 @@
             }
             img {
                 width: 100%;
+                border-radius: 10px;
+                @media (max-width: $brp_s) {
+                    border-radius: 8px;
+                }
             }
         }
     }
