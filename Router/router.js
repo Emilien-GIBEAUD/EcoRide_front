@@ -85,7 +85,8 @@ const LoadContentPage = async () => {
     // Ajout du contenu JavaScript AVEC import
     if (actualRoute.pathJS) {
         try {
-            const module = await import(actualRoute.pathJS);
+            const module = await import(actualRoute.pathJS + '?t=' + Date.now()); 
+            // Ajout d'un timestamp pour éviter le cache sur la page /user entre autres
             if (typeof module.initPage === 'function') {
                 module.initPage(); // Appelé automatiquement si défini
             }

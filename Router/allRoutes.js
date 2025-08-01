@@ -9,7 +9,7 @@ export const allRoutes = [
     new Route("/signout", "Deconnexion", "/Pages/Authentification/signout.html", ["ROLE_ADMIN", "ROLE_USER"], "/Assets/js/Authentification/signout.js", "/Assets/scss/css/user.css"),
     // new Route("/account", "Mon compte", "/Pages/Authentification/account.html", ["disconnected"], "", "/Assets/scss/css/user.css"),// ["ROLE_ADMIN", "ROLE_USER"]
     // Depuis le bouton "compte" :
-    new Route("/user", "Page utilisateur", "/Pages/Account/user.html", ["ROLE_ADMIN", "ROLE_USER"], "", "/Assets/scss/css/user.css"),
+    new Route("/user", "Page utilisateur", "/Pages/Account/user.html", ["ROLE_ADMIN", "ROLE_USER"], "/Assets/js/Account/user.js", "/Assets/scss/css/user.css"),
     new Route("/passenger", "Page passager", "/Pages/Account/passenger.html", ["ROLE_ADMIN", "ROLE_USER"], "", "/Assets/scss/css/user.css"),
     new Route("/driver", "Page conducteur", "/Pages/Account/driver.html", ["ROLE_ADMIN", "ROLE_USER"], "", "/Assets/scss/css/user.css"),
     new Route("/review", "Page avis", "/Pages/Account/review.html", ["ROLE_ADMIN", "ROLE_USER"], "", "/Assets/scss/css/user.css"),

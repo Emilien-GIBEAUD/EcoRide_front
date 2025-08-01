@@ -7,6 +7,9 @@ export const apiUrl = "https://localhost/api/";
 export const avatarsUrl = "https://localhost/uploads/avatars/";
 // A voir pour gérer tout ça en automatique
 
+export const maxSizeAvatar = 0.5 ;  // Taille max des images pouvant être envoyées (en Mo)
+
+
 export const tokenCookieName = "accesstoken";
 // Méthodes pour créer et lire un token à l'aide des méthodes ---Cookie
 export function setToken(token) {
@@ -97,7 +100,7 @@ export function showHideForRoles(){
     })
 }
 
-async function getInfoUser(){
+export async function getInfoUser(){
     const myHeaders = new Headers();
     myHeaders.append("X-AUTH-TOKEN", getToken());
 

@@ -1,7 +1,5 @@
-import { apiUrl } from '../script.js';
+import { apiUrl, maxSizeAvatar } from '../script.js';
 import { checkEmail, checkIfInputNonEmpty, checkPSW, checkPSWConfirm, escapeHTML, verifyPicture }from '../Tools/tools.js';
-
-const maxSizeAvatar = 0.5 ;  // Taille max des images pouvant être envoyées (en Mo)
 
 const firstNameSignup = document.getElementById("firstNameSignup");
 const nameSignup = document.getElementById("nameSignup");
@@ -30,8 +28,8 @@ btnSubscribe.addEventListener("click", userSubscription);
 
 // Fonction qui vérifie tous les inputs
 function checkInputs(){
-    const nameOK = checkIfInputNonEmpty(nameSignup);
     const firstNameOK = checkIfInputNonEmpty(firstNameSignup);
+    const nameOK = checkIfInputNonEmpty(nameSignup);
     const pseudoOK = checkIfInputNonEmpty(pseudoSignup);
     const emailOK = checkEmail(emailSignup);
     const pswOK = checkPSW(pswSignup);

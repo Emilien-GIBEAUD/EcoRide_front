@@ -4,7 +4,7 @@
     </nav>
     <div class="sub_page">
         <h1>Page utilisateur</h1>
-        <form id="suscribeForm">
+        <form id="editForm"><!-- A injecter depuis user.js -->
             <div class="form_input">
                 <label for="firstNameEdit">Prénom *</label>
                 <input type="text" id="firstNameEdit" placeholder="Votre prénom" name="firstName">
@@ -15,7 +15,7 @@
         
             <div class="form_input">
                 <label for="nameEdit">Nom *</label>
-                <input type="text" id="nameEdit" placeholder="Votre nom" name="name">
+                <input type="text" id="nameEdit" placeholder="Votre nom" name="lastName">
                 <div class="invalid_input">
                     * Nom requis
                 </div>
@@ -30,8 +30,9 @@
             </div>
 
             <div class="form_input">
-                <label for="avatar_name">Image de profil (format jpg, jpeg, png ou webp)</label>
-                <input type="file" id="avatar_name" name="avatarFile">
+                <label for="avatar_nameEdit">Image de profil (format jpg, jpeg, png ou webp)</label>
+                <input type="file" id="avatar_nameEdit" name="avatarFile">
+                <p class="info">Laisser vide si vous ne souhaitez pas modifier votre image de profil.</p>
                 <div class="valid_input">
                     Image valide
                 </div>
@@ -48,8 +49,8 @@
             <fieldset>
                 <legend>Etes vous également conducteur ?</legend>
                 <div class="form_checkbox">
-                    <input type="checkbox" id="driver" name="driver" value="driver"/>
-                    <label for="driver">Conducteur</label>
+                    <input type="checkbox" id="driverEdit" name="driver" value="driver"/>
+                    <label for="driverEdit">Conducteur</label>
                 </div>
                 <p class="info">Vous devrez ensuite saisir un véhicule dans votre page "Conducteur" avant de pouvoir poster un covoiturage.</p>
             </fieldset>
