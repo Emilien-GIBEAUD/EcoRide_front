@@ -14,7 +14,7 @@ export const allRoutes = [
     new Route("/driver", "Page conducteur", "/Pages/Account/driver.html", ["ROLE_ADMIN", "ROLE_USER"], "", "/Assets/scss/css/user.css"),
     new Route("/review", "Page avis", "/Pages/Account/review.html", ["ROLE_ADMIN", "ROLE_USER"], "", "/Assets/scss/css/user.css"),
     // Depuis le bouton "Compte" puis "Conducteur":
-    new Route("/car_add", "Ajout véhicule", "/Pages/Driver/car_add.html", ["ROLE_ADMIN", "ROLE_USER"], "", "/Assets/scss/css/user.css"),
+    new Route("/car_add", "Ajout véhicule", "/Pages/Driver/car_add.html", ["ROLE_ADMIN", "ROLE_USER"], "/Assets/js/Driver/car_add.js", "/Assets/scss/css/user.css"),
     new Route("/car_list", "Liste véhicule", "/Pages/Driver/car_list.html", ["ROLE_ADMIN", "ROLE_USER"], "", "/Assets/scss/css/user.css"),
     new Route("/carpool_add", "Créer covoiturage", "/Pages/Driver/carpool_add.html", ["ROLE_ADMIN", "ROLE_USER"], "", "/Assets/scss/css/user.css"),
     new Route("/carpool_list", "Liste covoiturage", "/Pages/Driver/carpool_list.html", ["ROLE_ADMIN", "ROLE_USER"], "", "/Assets/scss/css/user.css"),

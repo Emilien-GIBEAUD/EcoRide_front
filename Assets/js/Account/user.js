@@ -10,6 +10,7 @@ const btnEdit = document.getElementById("btnEdit");
 const editForm = document.getElementById("editForm");
 let userData;
 let avatarFile;
+
 /**
  * Initialise la page avec les données de l'utilisateur.
  */

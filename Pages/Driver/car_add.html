@@ -14,62 +14,53 @@
                     <div class="item_1">
                         <label for="brand">Marque</label>
                         <select name="brand" id="brand">
-                                <option value="Peugeot">Peugeot</option>
-                                <option value="Renault">Renault</option>
-                                <option value="Smart">Smart</option>
-                                <option value="Mercedes">Mercedes-Benz</option>
+                            <!-- Injecté -->
                         </select>
                     </div>
                     <div class="item_2">
                         <label for="model">Modèle</label>
                         <select name="model" id="model">
-                                <option value="205">205</option>
-                                <option value="Clio">Clio</option>
-                                <option value="Forfour">Forfour</option>
-                                <option value="Forfour">Continental GT</option>
+                            <!-- Injecté -->
                         </select>
+                        <div class="invalid_input">
+                            Le modèle est requis
+                        </div>
                     </div>
                     <div class="item_3">
                         <label for="color">Couleur</label>
                         <select name="color" id="color">
-                            <option value="Blanc">Blanc</option> 
-                            <option value="Bleu">Bleu</option> 
-                            <option value="Gris">Gris</option> 
-                            <option value="Jaune">Jaune</option> 
-                            <option value="Marron">Marron</option> 
-                            <option value="Noir">Noir</option> 
-                            <option value="Orange">Orange</option> 
-                            <option value="Rose">Rose</option> 
-                            <option value="Rouge">Rouge</option> 
-                            <option value="Vert">Vert</option> 
-                            <option value="Violet">Violet</option> 
+                            <!-- Injecté -->
                         </select>
                     </div>
                     <div class="item_4">
-                        <label for="Energy">Energie</label>
-                        <select name="Energy" id="Energy">
-                            <option value="Diesel">Diesel</option> 
-                            <option value="Electrique">Electrique</option> 
-                            <option value="Essence">Essence</option> 
-                            <option value="GPL">GPL</option> 
-                            <option value="Hybride">Hybride</option> 
-                            <option value="Hydrogène">Hydrogène</option> 
-                            <option value="A pédale">A pédale !</option> 
+                        <label for="energy">Energie</label>
+                        <select name="energy" id="energy">
+                            <!-- Injecté -->
                         </select>
                     </div>
                 </div>
                 <div class="form_input">
                     <label for="nbPlaceAddCar">Nombre de places :</label>
-                    <input type="number" id="nbPlaceAddCar" name="nbPlaceAddCar" min="1" max="9" >
+                    <input type="number" id="nbPlaceAddCar" name="placeNb" min="1" max="9" >
+                    <div class="invalid_input">
+                        Le nombre de places est requis
+                    </div>
                 </div>
                 <div class="form_input">
                     <label for="licenceAddCar">Immatriculation :</label>
-                    <input type="text" id="licenceAddCar" placeholder="AA 000 AA" name="licenceAddCar">
+                    <input type="text" id="licenceAddCar" placeholder="AA 000 AA" name="licencePlate">
+                    <div class="invalid_input">
+                        Le numéro d'immatriculation est requis
+                    </div>
                 </div>
                 <div class="form_input">
                     <label for="firstRegistrationAddCar">Première immatriculation :</label>
-                    <input type="date" id="firstRegistrationAddCar" name="firstRegistrationAddCar">
+                    <input type="date" id="firstRegistrationAddCar" name="firstRegistration">
+                    <div class="invalid_input">
+                        La date de première immatriculation est requise
+                    </div>
                 </div>
+                <p class="info">Tous les champs sont obligatoires.</p>
                 <div>
                     <button type="button" class="btn" id="btnAddCar">Ajouter</button>
                 </div>
