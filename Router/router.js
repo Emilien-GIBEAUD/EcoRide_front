@@ -51,7 +51,7 @@ const LoadContentPage = async () => {
     // Pages présentant des factorisations
     const url = actualRoute.url;
     // Pages utilisant le sous menu
-    const urlWithSub_menu = ['/user', '/passenger', '/driver', '/review', '/car', '/car_add', '/car_list', '/carpool', '/carpool_add', '/carpool_list'];
+    const urlWithSub_menu = ['/user', '/passenger', '/driver', '/review', '/car', '/car_add', '/car_edit', '/car_list', '/carpool', '/carpool_add', '/carpool_list'];
     if (urlWithSub_menu.includes(url)) {
         try {
             const sub_menu = await fetch('/Pages/_components/sub_menu.html').then((res) => res.text());
@@ -67,7 +67,7 @@ const LoadContentPage = async () => {
     }
 
     // Pages utilisant les boutons conducteur
-    const urlWithDriver_buttons = ['/driver', '/car', '/car_add', '/car_list', '/carpool', '/carpool_add', '/carpool_list'];
+    const urlWithDriver_buttons = ['/driver', '/car', '/car_add', '/car_edit', '/car_list', '/carpool', '/carpool_add', '/carpool_list'];
     if (urlWithDriver_buttons.includes(url)) {
         try {
             const driver_buttons = await fetch('/Pages/_components/driver_buttons.html').then((res) => res.text());

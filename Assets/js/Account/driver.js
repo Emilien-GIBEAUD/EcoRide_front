@@ -4,7 +4,6 @@ import { checkIfInputNonEmpty, escapeHTML }from '../Tools/tools.js';
 // IL RESTE LES PREFERENCES A GERER cf. function initPage()
 
 let userData;
-// let pageAllowed = true;
 
 /**
  * Initialise la page avec les préférences et le véhicule principale de l'utilisateur si il a bien le rôle utilisateur "driver".
@@ -44,7 +43,7 @@ async function loadMainCar() {
             `;
         } else {
             return `
-                <div class="main_car_select">
+                <div class="car_select">
                     <div class="item item_1">
                         <p class="underlined">Marque :</p>
                         <p>${mainCarData.model.brand.brand}</p>
@@ -62,7 +61,7 @@ async function loadMainCar() {
                         <p>${mainCarData.energy.energy}</p>
                     </div>
                 </div>
-                <div class="main_car_other">
+                <div class="car_other">
                     <div class="item">
                         <p class="underlined">Nombre de places :</p>
                         <p>${mainCarData.placeNb}</p>
@@ -87,7 +86,7 @@ async function loadMainCar() {
 }
 
 /**
- * Récupère le véhicule principal via une requête HTTP GET.
+ * Récupère le véhicule principal de l'utilisateur connecté via une requête HTTP GET.
  *
  * @async
  * @returns {Promise<Response>} Une promesse résolue avec la réponse de la requête fetch.

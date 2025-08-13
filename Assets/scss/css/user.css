@@ -119,8 +119,8 @@
   width: 100%;
   background-color: rgba(255, 222, 173, 0.95);
   border: solid thin #000000;
-  padding: 5px;
-  gap: 5px;
+  padding: 10px;
+  gap: 10px;
   font-size: 16px;
 }
 @media (max-width: 630px) {
@@ -146,7 +146,7 @@
   font-weight: normal;
 }
 
-.car_add_select, .main_car_select {
+.car_add_select, .car_select {
   display: grid;
   width: 100%;
   grid-template-columns: repeat(2, 1fr);
@@ -154,13 +154,13 @@
   gap: 10px 0;
 }
 @media (max-width: 400px) {
-  .car_add_select, .main_car_select {
+  .car_add_select, .car_select {
     grid-template-rows: repeat(3, auto);
     gap: 10px 0;
   }
 }
 @media (max-width: 400px) {
-  .car_add_select .item_1, .car_add_select .item_2, .main_car_select .item_1, .main_car_select .item_2 {
+  .car_add_select .item_1, .car_add_select .item_2, .car_select .item_1, .car_select .item_2 {
     grid-column: span 2;
   }
 }
@@ -175,7 +175,7 @@
   }
 }
 
-.main_car_other {
+.car_other {
   display: grid;
   width: 100%;
   grid-template-rows: repeat(3, auto);
@@ -183,8 +183,40 @@
   padding: 5px 0;
 }
 
-.main_car {
+.main_car, .car_list {
   width: 100%;
+}
+
+.info_main_car {
+  margin-bottom: 10px;
+}
+@media (max-width: 630px) {
+  .info_main_car {
+    margin-bottom: 5px;
+  }
+}
+
+.car_item {
+  border: solid thin #000000;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+@media (max-width: 630px) {
+  .car_item {
+    margin-bottom: 5px;
+    padding: 5px;
+  }
+}
+
+.car_action {
+  display: flex;
+  justify-content: end;
+  gap: 10px;
+}
+@media (max-width: 630px) {
+  .car_action {
+    gap: 5px;
+  }
 }
 
 .carpool_select_car {

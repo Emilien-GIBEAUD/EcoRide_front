@@ -39,6 +39,10 @@ h2 {
 	text-decoration: underline;
 }
 
+.bold {
+	font-weight: bold;
+}
+
 html {
 	scroll-behavior: smooth;
 }
@@ -306,6 +310,10 @@ a:link, a:visited, a:hover {
 }
 a:hover {
 	text-decoration: none;
+}
+
+.btn_danger {
+    background-color: $danger;
 }
 
 .btn_link {

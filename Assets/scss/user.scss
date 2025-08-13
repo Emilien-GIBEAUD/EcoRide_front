@@ -86,8 +86,8 @@
 	width: 100%;
 	background-color: color_opacity($tert, 0.95);	// avoid to give opacity to the children
 	border: solid thin $black;
-	padding: 5px;
-	gap: 5px;
+	padding: 10px;
+	gap:10px;
 	font-size: $text;
 	@media (max-width: $brp_s) {
 		padding: 5px;
@@ -111,7 +111,7 @@
     }
 }
 
-.car_add_select, .main_car_select {
+.car_add_select, .car_select {
     display: grid;
     width: 100%;
     grid-template-columns: repeat(2, 1fr);
@@ -136,7 +136,7 @@
     }
 }
 
-.main_car_other {
+.car_other {
     display: grid;
     width: 100%;
     grid-template-rows: repeat(3, auto);
@@ -144,8 +144,34 @@
     padding: 5px 0;
 }
 
-.main_car {
+.main_car, .car_list {
     width: 100%;
+}
+
+.info_main_car {
+    margin-bottom: 10px;
+	@media (max-width: $brp_s) {
+        margin-bottom: 5px;
+	}
+}
+
+.car_item {
+    border: solid thin $black;
+    margin-bottom: 10px;
+    padding: 10px;
+	@media (max-width: $brp_s) {
+        margin-bottom: 5px;
+		padding: 5px;
+	}
+}
+
+.car_action {
+    display: flex;
+    justify-content: end;
+    gap: 10px;
+	@media (max-width: $brp_s) {
+        gap: 5px;
+    }
 }
 
 .carpool_select_car{
