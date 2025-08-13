@@ -31,7 +31,7 @@ async function loadCarList() {
                 if (elem.main) {
                     main = "<p class='bold info_main_car'>Ce véhicule est votre véhicule principale</p>";
                 } else {
-                    main = "<button type='button' class='btn info_main_car' id='btnDeclareMainCar${elem.id}'>Déclarer comme véhicule principale</button>";
+                    main = "<p>En construction...</p> <button type='button' class='btn info_main_car' id='btnDeclareMainCar${elem.id}'>Déclarer comme véhicule principale</button>";
                 }
                 carListHTML += `
                     <div class="car_item">
@@ -69,8 +69,10 @@ async function loadCarList() {
                             </div>
                         </div>
                         <div class="car_action">
+                            <p>En construction...</p>
                             <a href="/car_edit?id=${elem.id}" class="btn btn_link">Modifier</a>
                             <button type="button" class="btn btn_danger" id="btnDeleteCar${elem.id}">Supprimer</button>
+                            <p>...</p>
                         </div>
                     </div>
                 `;
