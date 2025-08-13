@@ -35,6 +35,10 @@ h2 {
   }
 }
 
+.underlined {
+  text-decoration: underline;
+}
+
 html {
   scroll-behavior: smooth;
 }

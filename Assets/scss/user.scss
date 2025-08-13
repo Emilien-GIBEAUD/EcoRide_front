@@ -111,7 +111,7 @@
     }
 }
 
-.car_add_select {
+.car_add_select, .main_car_select {
     display: grid;
     width: 100%;
     grid-template-columns: repeat(2, 1fr);
@@ -126,6 +126,26 @@
             grid-column: span 2;
         }
     }
+}
+
+.item {
+    display: flex;
+    gap: 15px;
+    @media (max-width: $brp_s) {
+        gap: 8px;
+    }
+}
+
+.main_car_other {
+    display: grid;
+    width: 100%;
+    grid-template-rows: repeat(3, auto);
+    gap: 10px 0;
+    padding: 5px 0;
+}
+
+.main_car {
+    width: 100%;
 }
 
 .carpool_select_car{

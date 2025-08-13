@@ -10,41 +10,47 @@
         </div>
         <div class="sub_container">
             <h2>Vos préférences</h2>
+            <p>En cours de construction...</p>
             <form id="preferencesForm">
                 <fieldset class="radio_input">
                     <legend>Fumeurs acceptés :</legend>
                     <div>
-                        <input type="radio" id="huey" name="smoker" value="oui" />
-                        <label for="huey">Oui</label>
+                        <input type="radio" id="smoker_yes" name="smoker" value="oui" />
+                        <label for="smoker_yes">Oui</label>
                     </div>
                     <div>
-                        <input type="radio" id="louie" name="smoker" value="non" checked />
-                        <label for="louie">Non</label>
+                        <input type="radio" id="smoker_no" name="smoker" value="non" checked />
+                        <label for="smoker_no">Non</label>
                     </div>
                 </fieldset>
                 <fieldset class="radio_input">
                     <legend>Animaux acceptés :</legend>
                     <div>
-                        <input type="radio" id="huey" name="animal" value="oui" />
-                        <label for="huey">Oui</label>
+                        <input type="radio" id="animal_yes" name="animal" value="oui" />
+                        <label for="animal_yes">Oui</label>
                     </div>
                     <div>
-                        <input type="radio" id="louie" name="animal" value="non" checked />
-                        <label for="louie">Non</label>
+                        <input type="radio" id="animal_no" name="animal" value="non" checked />
+                        <label for="animal_no">Non</label>
                     </div>
                 </fieldset>
                 <div class="form_input">
                     <label for="otherPreferences">Autres préférences :</label>
                     <input type="text" id="otherPreferences" placeholder="Vos autres préférences" name="otherPreferences">
                 </div>
+                <!--
                 <div>
                     <button type="button" class="btn" id="btnPreferences">Appliquer</button>
                 </div>
+                -->
+            <p>En cours de construction...</p>
             </form>
         </div>
         <div class="sub_container">
             <h2>Votre véhicule principale</h2>
-            <p>En cours de construction...</p>
+            <div class="main_car" id="mainCar">
+                <!-- Injecté -->
+            </div>
             <div>
                 <a href="/car_list" class="btn btn_link">Vos véhicules</a>
                 <a href="/car_add" class="btn btn_link">Ajouter un véhicule</a>

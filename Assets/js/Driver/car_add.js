@@ -1,7 +1,5 @@
-import { apiUrl, getInfoUser, getToken } from '../script.js';
+import { apiUrl, getToken } from '../script.js';
 import { checkIfInputNonEmpty, escapeHTML }from '../Tools/tools.js';
-// import { apiUrl, avatarsUrl, getInfoUser, getToken, maxSizeAvatar } from '../script.js';
-// import { checkIfInputNonEmpty, escapeHTML, verifyPicture }from '../Tools/tools.js';
 
 let brandList;
 let colorList;
@@ -71,7 +69,9 @@ nbPlaceAddCar.addEventListener("keyup", checkInputs);
 licenceAddCar.addEventListener("keyup", checkInputs);
 firstRegistrationAddCar.addEventListener("keyup", checkInputs);
 
-// Fonction qui vérifie tous les inputs
+/**
+ * Vérifie tous les inputs.
+ */
 async function checkInputs(){
     const nbPlaceOK = checkIfInputNonEmpty(nbPlaceAddCar);
     const licenceOK = checkIfInputNonEmpty(licenceAddCar);
@@ -89,7 +89,9 @@ async function checkInputs(){
     }
 }
 
-// Fonction qui ajoute un véhicule
+/**
+ * Ajoute un véhicule dans la BDD via une requête HTTP POST.
+ */
 function addCar(){
     const formData = new FormData(addCarForm);
 

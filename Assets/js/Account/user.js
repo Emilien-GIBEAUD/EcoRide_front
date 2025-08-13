@@ -20,7 +20,9 @@ export async function initPage() {
     avatarPicture.innerHTML = getAvatarFile();
 }
 
-// Fonction qui récupère les infos de l'utilisateur et les mets dans les inputs
+/**
+ * Récupère les infos de l'utilisateur et les mets dans les inputs.
+ */
 async function loadUserData() {
     try {
         userData = await getInfoUser();
@@ -36,7 +38,9 @@ async function loadUserData() {
     }
 }
 
-// Fonction qui récupère les infos de l'utilisateur et les mets dans les inputs
+/**
+ * Récupère l'image avatar et la met dans le HTML.
+ */
 function getAvatarFile() {
         return `
             <img src="${avatarsUrl + avatarFile}" alt="Avatar de l'utilisateur" />
@@ -59,7 +63,9 @@ let roleChanged = false;
 // Envoie du formulaire
 btnEdit.addEventListener("click", userEdition);
 
-// Fonction qui vérifie tous les inputs
+/**
+ * Vérifie tous les inputs.
+ */
 async function checkInputs(){
     const firstNameOK = checkIfInputNonEmpty(firstNameEdit);
     const nameOK = checkIfInputNonEmpty(nameEdit);
@@ -79,7 +85,9 @@ async function checkInputs(){
     }
 }
 
-// Fonction qui vérifie le fichier avatar
+/**
+ * Vérifie le fichier avatar.
+ */
 function checkAvatarFile(){
     if (avatar_nameEdit.files.length === 0) { // OK si aucun fichier n'est sélectionné
         avatar_nameEdit.classList.remove("is-valid", "is-danger");
@@ -97,7 +105,9 @@ function checkAvatarFile(){
     }
 }
 
-// Fonction qui modifie l'utilisateur
+/**
+ * Modifie l'utilisateur dans la BDD via une requête HTTP POST.
+ */
 function userEdition(){
     const formData = new FormData(editForm);
 

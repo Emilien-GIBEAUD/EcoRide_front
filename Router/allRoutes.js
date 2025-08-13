@@ -8,10 +8,10 @@ export const allRoutes = [
     new Route("/signup", "Inscription", "/Pages/Authentification/signup.html", ["disconnected"], "/Assets/js/Authentification/signup.js", "/Assets/scss/css/user.css"),
     new Route("/signout", "Deconnexion", "/Pages/Authentification/signout.html", ["ROLE_ADMIN", "ROLE_USER"], "/Assets/js/Authentification/signout.js", "/Assets/scss/css/user.css"),
     // new Route("/account", "Mon compte", "/Pages/Authentification/account.html", ["disconnected"], "", "/Assets/scss/css/user.css"),// ["ROLE_ADMIN", "ROLE_USER"]
-    // Depuis le bouton "compte" :
+    // Depuis le bouton "Compte" :
     new Route("/user", "Page utilisateur", "/Pages/Account/user.html", ["ROLE_ADMIN", "ROLE_USER"], "/Assets/js/Account/user.js", "/Assets/scss/css/user.css"),
     new Route("/passenger", "Page passager", "/Pages/Account/passenger.html", ["ROLE_ADMIN", "ROLE_USER"], "", "/Assets/scss/css/user.css"),
-    new Route("/driver", "Page conducteur", "/Pages/Account/driver.html", ["ROLE_ADMIN", "ROLE_USER"], "", "/Assets/scss/css/user.css"),
+    new Route("/driver", "Page conducteur", "/Pages/Account/driver.html", ["ROLE_ADMIN", "ROLE_USER"], "/Assets/js/Account/driver.js", "/Assets/scss/css/user.css"),
     new Route("/review", "Page avis", "/Pages/Account/review.html", ["ROLE_ADMIN", "ROLE_USER"], "", "/Assets/scss/css/user.css"),
     // Depuis le bouton "Compte" puis "Conducteur":
     new Route("/car_add", "Ajout véhicule", "/Pages/Driver/car_add.html", ["ROLE_ADMIN", "ROLE_USER"], "/Assets/js/Driver/car_add.js", "/Assets/scss/css/user.css"),
