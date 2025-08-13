@@ -1,19 +1,17 @@
 import { apiUrl, getInfoUser, getToken } from '../script.js';
 import { checkIfInputNonEmpty, escapeHTML }from '../Tools/tools.js';
+// IL RESTE LES PREFERENCES A GERER cf. function initPage()
+// IL RESTE LES PREFERENCES A GERER cf. function initPage()
 
 let userData;
-let pageAllowed = true;
+// let pageAllowed = true;
 
 /**
  * Initialise la page avec les préférences et le véhicule principale de l'utilisateur si il a bien le rôle utilisateur "driver".
  */
 export async function initPage() {
     userData = await getInfoUser();
-    checkUsageRole();
-    if (!pageAllowed) {
-        // Supprime tous les éléments qui suivent le h1.
-        // const elementsToRemove = document.querySelectorAll('h1 ~ *');
-        // elementsToRemove.forEach(element => element.remove());
+    if (userData.usageRole.length === 0) {
         const h1 = document.querySelector('h1');
         while (h1.nextElementSibling) {
             h1.nextElementSibling.remove();
@@ -31,19 +29,6 @@ export async function initPage() {
     const mainCar = document.getElementById("mainCar");
     mainCar.innerHTML = await loadMainCar();
 }
-
-/**
- * Vérifie si l'utilisateur a bien le rôle utilisateur "driver" et modifie la page le cas échéant.
- */
-async function checkUsageRole(){
-    // console.log(userData);
-    if (userData.usageRole.length === 0) {
-        pageAllowed = false;
-        console.log(pageAllowed);
-        
-    }
-}
-
 
 /**
  * Insère le véhicule principal dans le HTML à l'aide de getMainCar.
