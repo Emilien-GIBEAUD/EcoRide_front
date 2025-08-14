@@ -21,7 +21,7 @@ export const allRoutes = [
     new Route("/carpool_list", "Liste covoiturage", "/Pages/Driver/carpool_list.html", ["ROLE_ADMIN", "ROLE_USER"], "", "/Assets/scss/css/user.css"),
     // new Route("/editPSW", "Editer mot de passe", "/Pages/Authentification/editPSW.html", ["ROLE_ADMIN", "ROLE_USER"]),
     new Route("/contact", "Contact", "/Pages/contact.html", [], "", ""),
-    new Route("/legals", "Contact", "/Pages/legals.html", [], "", "")
+    new Route("/legals", "Mentions légales", "/Pages/legals.html", [], "", "/Assets/scss/css/legals.css")
 ];
 
 //Le titre s'affiche comme ceci : Route.titre - websitename

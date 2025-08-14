@@ -1,0 +1,10 @@
+/* This file is served on the legals page */
+.legals p {
+  width: 100%;
+}
+.legals .indent {
+  text-indent: 15px;
+}
+.legals .indent5 {
+  text-indent: 5px;
+}
