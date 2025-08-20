@@ -1,19 +1,21 @@
 import Route from "./Route.js";
-import { allRoutes, websiteName } from "./allRoutes.js";
+import { allRoutes, basePath, websiteName } from "./allRoutes.js";
 import { isConnected, showHideForRoles, getRole } from '../Assets/js/script.js';
 
 // Création d'une route pour la page 404 (page introuvable)
-const route404 = new Route("404", "Page introuvable", "/Pages/404.html", []);
+const route404 = new Route("404", "Page introuvable", basePath + "/Pages/404.html", []);
 
 // Fonction qui renvoie la route correspondant à une URL donnée
 const getRouteByUrl = (url) => {
     let currentRoute = null;
+
     // Parcours de toutes les routes pour trouver la correspondance
     allRoutes.forEach((element) => {
         if (element.url == url) {
             currentRoute = element;
         }
     });
+
     // Si aucune correspondance n'est trouvée, on retourne la route 404
     if (currentRoute != null) {
         return currentRoute;
@@ -54,7 +56,7 @@ const LoadContentPage = async () => {
     const urlWithSub_menu = ['/user', '/passenger', '/driver', '/review', '/car', '/car_add', '/car_edit', '/car_list', '/carpool', '/carpool_add', '/carpool_list'];
     if (urlWithSub_menu.includes(url)) {
         try {
-            const sub_menu = await fetch('/Pages/_components/sub_menu.html').then((res) => res.text());
+            const sub_menu = await fetch('./Pages/_components/sub_menu.html').then((res) => res.text());
             const nav = document.getElementById("sub_menu");
             if (nav) {
                 nav.innerHTML = sub_menu;
@@ -70,7 +72,7 @@ const LoadContentPage = async () => {
     const urlWithDriver_buttons = ['/driver', '/car', '/car_add', '/car_edit', '/car_list', '/carpool', '/carpool_add', '/carpool_list'];
     if (urlWithDriver_buttons.includes(url)) {
         try {
-            const driver_buttons = await fetch('/Pages/_components/driver_buttons.html').then((res) => res.text());
+            const driver_buttons = await fetch('./Pages/_components/driver_buttons.html').then((res) => res.text());
             const nav = document.getElementById("driver_buttons");
             if (nav) {
                 nav.innerHTML = driver_buttons;
@@ -95,14 +97,20 @@ const LoadContentPage = async () => {
         }
     }
 
-    // Ajout du style CSS
+    // Ajout du style CSS (remplace l'existant)
     if (actualRoute.pathCSS) {
+        // Suppression de l'existant
+        const oldLink = document.getElementById("page-style");
+        if (oldLink) {
+            oldLink.remove();
+        }
+
         const link = document.createElement('link');
+        link.id = "page-style";
         link.rel = 'stylesheet';
         link.href = actualRoute.pathCSS;
         document.head.appendChild(link);
     }
-
 
     // Changement du titre de la page
     document.title = actualRoute.title + " - " + websiteName;
@@ -111,15 +119,42 @@ const LoadContentPage = async () => {
     showHideForRoles();
 };
 
+// // Avant passage en prod
+// // Fonction pour gérer les événements de routage (clic sur les liens) ==> sans window.event qui est déprécié
+// const routeEvent = (event) => {
+//     event.preventDefault();
+//     // Mise à jour de l'URL dans l'historique du navigateur
+//     window.history.pushState({}, "", event.target.href);
+
+//     // Chargement du contenu de la nouvelle page
+//     LoadContentPage();
+// };
+
 // Fonction pour gérer les événements de routage (clic sur les liens) ==> sans window.event qui est déprécié
 const routeEvent = (event) => {
     event.preventDefault();
-    // Mise à jour de l'URL dans l'historique du navigateur
-    window.history.pushState({}, "", event.target.href);
+
+    let href = event.currentTarget.getAttribute("href");
+
+    // Normalisation du lien : enlève le "./" ou basePath en trop
+    if (href.startsWith("./")) {
+        href = href.substring(1); // "./signin" -> "/signin"
+    }
+    if (href.startsWith(basePath)) {
+        href = href.replace(basePath, ""); // "/ecoride/signin" -> "/signin"
+    }
+
+    // Construction l'URL finale avec basePath
+    const finalUrl = basePath + href;
+
+    // Mise à jour de l'URL dans l'historique
+    window.history.pushState({}, "", finalUrl);
+
     // Chargement du contenu de la nouvelle page
     LoadContentPage();
 };
-// Attacher l'événement correctement aux liens
+
+// Attache l'événement correctement aux liens
 document.querySelectorAll("a").forEach(link => {
     link.addEventListener("click", routeEvent);
 });

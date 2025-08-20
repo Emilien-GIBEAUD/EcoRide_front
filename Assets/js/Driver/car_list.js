@@ -4,7 +4,7 @@ import { apiUrl, getInfoUser, getToken } from '../script.js';
 let userData;
 
 /**
- * Initialise la page avec les préférences et le véhicule principale de l'utilisateur si il a bien le rôle utilisateur "driver".
+ * Initialise la page avec les préférences et le véhicule principal de l'utilisateur si il a bien le rôle utilisateur "driver".
  */
 export async function initPage() {
     userData = await getInfoUser();
@@ -29,9 +29,9 @@ async function loadCarList() {
             let main;
             carListData.forEach(elem => {
                 if (elem.main) {
-                    main = "<p class='bold info_main_car'>Ce véhicule est votre véhicule principale</p>";
+                    main = "<p class='bold info_main_car'>Ce véhicule est votre véhicule principal</p>";
                 } else {
-                    main = "<p>En construction...</p> <button type='button' class='btn info_main_car' id='btnDeclareMainCar${elem.id}'>Déclarer comme véhicule principale</button>";
+                    main = "<p>En construction...</p> <button type='button' class='btn info_main_car' id='btnDeclareMainCar${elem.id}'>Déclarer comme véhicule principal</button>";
                 }
                 carListHTML += `
                     <div class="car_item">
