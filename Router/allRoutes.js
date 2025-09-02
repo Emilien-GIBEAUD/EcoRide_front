@@ -1,9 +1,5 @@
 import Route from "./Route.js";
-
-// // Passage en prod essai 1
-// Détection de l'environnement : local ou prod
-export const basePath = window.location.pathname.startsWith("/ecoride") ? "/ecoride" : "";
-
+import { basePath } from '../Assets/js/script.js';
 
 //Définir ici vos routes
 export const allRoutes = [

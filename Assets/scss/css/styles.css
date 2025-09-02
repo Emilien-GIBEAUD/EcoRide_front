@@ -89,7 +89,6 @@ body {
 header {
   display: flex;
   background-color: #D38228;
-  border: solid thin #000000;
   position: sticky;
   top: 0;
   z-index: 10;
@@ -107,7 +106,6 @@ header .logo {
   display: flex;
   justify-content: center;
   width: 100%;
-  border-bottom: solid thin #000000;
   margin-bottom: 10px;
 }
 @media (orientation: portrait) {
@@ -115,7 +113,6 @@ header .logo {
     height: -moz-max-content;
     height: max-content;
     width: 75px;
-    border-right: solid thin #000000;
     padding: 0 5px;
     border-bottom: none;
     margin-bottom: 0;
@@ -492,7 +489,6 @@ main .search_bar img {
   width: 90%;
   max-width: 960px;
   background-color: rgba(255, 222, 173, 0.95);
-  border: solid thin #000000;
   border-radius: 25px;
   padding: 15px;
   gap: 5px;
@@ -523,7 +519,6 @@ footer {
   height: fit-content;
   padding: 5px 25px;
   background-color: #D38228;
-  border: solid thin #000000;
   z-index: 10;
 }
 @media (max-width: 630px) {

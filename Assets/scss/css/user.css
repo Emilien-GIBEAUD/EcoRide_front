@@ -10,7 +10,6 @@
   border-top-left-radius: 24px;
   border-top-right-radius: 24px;
   background-color: #D38228;
-  border-bottom: solid thin #000000;
 }
 @media (max-width: 630px) {
   #sub_menu {

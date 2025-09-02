@@ -1,11 +1,8 @@
-// // en local :
-// export const apiUrl = "https://127.0.0.1:8000/api/";
-// export const avatarsUrl = "https://127.0.0.1:8000/uploads/avatars/";
+// Détection de l'environnement : local ou prod
+export const basePath = window.location.pathname.startsWith("/ecoride") ? "/ecoride" : "";
 
-// avec docker (remplacer localhost par le nom de domaine sauf erreur de ma part)
-export const apiUrl = "https://localhost/api/";
-export const avatarsUrl = "https://localhost/uploads/avatars/";
-// A voir pour gérer tout ça en automatique
+export const apiUrl = (basePath === "/ecoride") ? "https://petitmaraichin.myasustor.com/ecoride/api/" : "https://localhost/api/";
+export const avatarsUrl = (basePath === "/ecoride") ? "https://petitmaraichin.myasustor.com/ecoride/uploads/avatars/" : "https://localhost/uploads/avatars/";
 
 export const maxSizeAvatar = 0.5 ;  // Taille max des images pouvant être envoyées (en Mo)
 

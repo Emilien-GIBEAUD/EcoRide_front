@@ -14,7 +14,7 @@
     border-top-left-radius: #{$border_radius_int - 1}px;
     border-top-right-radius: #{$border_radius_int - 1}px;
     background-color: $prim;
-    border-bottom: solid thin $black;
+    // border-bottom: solid thin $black;
     @media (max-width: $brp_s) {
         padding: 3px;
         gap: 5px;

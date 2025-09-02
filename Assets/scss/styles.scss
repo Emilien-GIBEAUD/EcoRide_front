@@ -81,7 +81,7 @@ body{
 header {
 	display: flex;
 	background-color: $prim;
-	border: solid thin $black;
+	// border: solid thin $black;
 	position: sticky;
 	top: 0;
 	z-index: 10;
@@ -96,12 +96,12 @@ header {
 			display: flex;
 			justify-content: center;
 			width: 100%;
-			border-bottom: solid thin $black;
+			// border-bottom: solid thin $black;
 			margin-bottom: 10px;
 			@media (orientation: portrait) {
 				height: max-content;
 				width: 75px;
-				border-right: solid thin $black;
+				// border-right: solid thin $black;
 				padding: 0 5px;
 				border-bottom: none;
 				margin-bottom: 0;
@@ -372,7 +372,7 @@ main {
 	width: 90%;
 	max-width: 960px;
 	background-color: color_opacity($tert, 0.95);	// avoid to give opacity to the children
-	border: solid thin $black;
+	// border: solid thin $black;
 	border-radius: #{$border_radius_int}px;
 	padding: $padding;
 	gap: 5px;
@@ -401,7 +401,7 @@ footer {
 	height: fit-content;
 	padding: 5px 25px;
 	background-color: $prim;
-	border: solid thin $black;
+	// border: solid thin $black;
 	z-index: 10;
 	@media (max-width: $brp_s) {
 		font-size: $text_xs;
