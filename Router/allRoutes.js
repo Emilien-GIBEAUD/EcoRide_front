@@ -17,7 +17,7 @@ export const allRoutes = [
     new Route(basePath + "/car_add", "Ajout véhicule", basePath + "/Pages/Driver/car_add.html", ["ROLE_ADMIN", "ROLE_USER"], basePath + "/Assets/js/Driver/car_add.js", basePath + "/Assets/scss/css/user.css"),
     new Route(basePath + "/car_list", "Liste véhicules", basePath + "/Pages/Driver/car_list.html", ["ROLE_ADMIN", "ROLE_USER"], basePath + "/Assets/js/Driver/car_list.js", basePath + "/Assets/scss/css/user.css"),
     new Route(basePath + "/car_edit", "Modification véhicule", basePath + "/Pages/Driver/car_edit.html", ["ROLE_ADMIN", "ROLE_USER"], basePath + "/Assets/js/Driver/car_edit.js", basePath + "/Assets/scss/css/user.css"),
-    new Route(basePath + "/carpool_add", "Créer covoiturage", basePath + "/Pages/Driver/carpool_add.html", ["ROLE_ADMIN", "ROLE_USER"], "", basePath + "/Assets/scss/css/user.css"),
+    new Route(basePath + "/carpool_add", "Créer covoiturage", basePath + "/Pages/Driver/carpool_add.html", ["ROLE_ADMIN", "ROLE_USER"], "/Assets/js/Driver/carpool_add.js", basePath + "/Assets/scss/css/user.css"),
     new Route(basePath + "/carpool_list", "Liste covoiturage", basePath + "/Pages/Driver/carpool_list.html", ["ROLE_ADMIN", "ROLE_USER"], "", basePath + "/Assets/scss/css/user.css"),
     // new Route(basePath + "/editPSW", "Editer mot de passe", basePath + "/Pages/Authentification/editPSW.html", ["ROLE_ADMIN", "ROLE_USER"]),
     new Route(basePath + "/contact", "Contact", basePath + "/Pages/contact.html", [], "", ""),

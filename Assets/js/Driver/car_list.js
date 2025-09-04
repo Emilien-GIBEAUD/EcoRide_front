@@ -22,7 +22,7 @@ async function loadCarList() {
         const carListData = await getCarList();
         if (carListData.length === 0) {
             return `
-                <p>Vous n'avez pas de véhicules saisies, veuillez saisir un véhicule</p>
+                <p>Vous n'avez pas de véhicules saisies, veuillez ajouter un véhicule.</p>
             `;
         } else {
             let carListHTML = "";
