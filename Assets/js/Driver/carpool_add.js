@@ -108,7 +108,7 @@ async function loadCarpoolAdd() {
                         <input type="number" id="nbPlaceAddCarpool" name="travelPlace" min="1" max="9" >
                     </div>
                     <div>
-                        <button type="button" class="btn" id="btnAddCarpool">Ajouter (En construction...)</button>
+                        <button type="button" class="btn" id="btnAddCarpool">Poster votre covoiturage</button>
                     </div>
                 </form>
             `;
