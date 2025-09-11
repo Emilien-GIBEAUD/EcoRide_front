@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* This file is served on these pages : signin, signup, account */
 /* START --------------------------------------------------------------*/
 #sub_menu {
@@ -366,6 +367,22 @@
 .sign form .info {
   width: 100%;
   font-style: italic;
+}
+
+#carpoolAdd .suggestion_box {
+  background: #FFFFFF;
+  width: 100%;
+  overflow-y: auto;
+  display: none; /* caché par défaut */
+  z-index: 10;
+}
+#carpoolAdd .suggestion_item {
+  padding: 5px;
+  cursor: pointer;
+}
+#carpoolAdd .suggestion_item:hover {
+  background: #555555;
+  color: #FFFFFF;
 }
 
 .danger_input {

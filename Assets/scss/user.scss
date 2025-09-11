@@ -230,6 +230,26 @@
     }
 }
 
+#carpoolAdd {
+    .suggestion_box {
+        background: $white;
+        width: 100%;
+        overflow-y: auto;
+        display: none; /* caché par défaut */
+        z-index: 10;
+    }
+
+    .suggestion_item {
+        padding: 5px;
+        cursor: pointer;
+    }
+
+    .suggestion_item:hover {
+        background: $grey;
+        color: $white;
+    }
+}
+
 @mixin input_feedback{
     display: none; // COMMENT FOR DEBUG
     font-size: $text;
