@@ -75,7 +75,7 @@ async function loadCarpoolAdd() {
                 <form id="addCarpoolForm">
                     <div class="form_input">
                         <label for="depDateAddCarpool">Date et horaire de départ :</label>
-                        <input type="datetime-local" id="depDateAddCarpool" name="depDateTime">
+                        <input type="datetime-local" step="900" id="depDateAddCarpool" name="depDateTime">
                     </div>
                     <div class="form_input">
                         <label for="depAddressAddCarpool">Adresse de départ :</label>

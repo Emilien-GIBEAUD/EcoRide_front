@@ -144,3 +144,14 @@ export function dateToDatetimeLocal(date) {
 
     return formatted;
 }
+
+/**
+ * Fonction qui transforme une date en string au format YYYY-MM-DDT... en string au format DD / MM / YYYY.
+ *
+ * @param {string} date - La date à transformer.
+ * @returns {string} La date au format DD/MM/YYYY.
+ */
+export function dateToDateShort(date) {
+    const [year, month, day] = date.split("T")[0].split("-");
+    return `${day} / ${month} / ${year}`;
+}
