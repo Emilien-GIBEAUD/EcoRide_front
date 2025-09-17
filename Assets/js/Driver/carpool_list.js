@@ -55,9 +55,9 @@ async function loadCarpoolList() {
                                 <p>|</p>
                             </div>
                             <div class="carpool_sub_item last_item">
-                                <a href="/car_edit?id=1" class="btn btn_link">Détails</a>
-                                <a href="/car_edit?id=1" class="btn btn_link btn_danger">Annuler</a>
-                                <button type="button" class="btn" id="btnDeleteCarpool1">Démarrer</button>
+                                <a href="/car_edit?id=1" class="btn btn_link">...Détails...</a>
+                                <a href="/car_edit?id=1" class="btn btn_link btn_danger">...Annuler...</a>
+                                <button type="button" class="btn" id="btnDeleteCarpool1">...Démarrer...</button>
                             </div>
                         </div>
                     `;
@@ -84,9 +84,8 @@ async function loadCarpoolList() {
                                 <p>|</p>
                             </div>
                             <div class="carpool_sub_item last_item">
-                                <a href="/car_edit?id=1" class="btn btn_link">Détails</a>
-                                <a href="/car_edit?id=1" class="btn btn_link btn_danger">Annuler</a>
-                                <button type="button" class="btn" id="btnDeleteCarpool1">Démarrer</button>
+                                <a href="/car_edit?id=1" class="btn btn_link">...Détails...</a>
+                                <button type="button" class="btn" id="btnDeleteCarpool1">...Arrivé à destination...</button>
                             </div>
                         </div>
                     `;
@@ -113,9 +112,8 @@ async function loadCarpoolList() {
                                 <p>|</p>
                             </div>
                             <div class="carpool_sub_item last_item">
-                                <a href="/car_edit?id=1" class="btn btn_link">Détails</a>
-                                <a href="/car_edit?id=1" class="btn btn_link btn_danger">Annuler</a>
-                                <button type="button" class="btn" id="btnDeleteCarpool1">Démarrer</button>
+                                <a href="/car_edit?id=1" class="btn btn_link">...Détails...</a>
+                                <button type="button" class="btn" id="btnDeleteCarpool1">...Laisser un avis...</button>
                             </div>
                         </div>
                     `;
