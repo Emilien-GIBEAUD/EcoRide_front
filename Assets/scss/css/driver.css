@@ -1,5 +1,9 @@
 @charset "UTF-8";
 /* This file is served on pages : driver (and her subpage) */
+.driver {
+  padding: 0;
+}
+
 .radio_input {
   display: flex;
   flex-direction: row;

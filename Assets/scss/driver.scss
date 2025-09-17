@@ -3,6 +3,10 @@
 @import 'functions';
 @import 'mixins';
 
+.driver {
+    padding: 0;
+}
+
 .radio_input {
     display: flex;
     flex-direction: row;
