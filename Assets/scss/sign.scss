@@ -1,0 +1,16 @@
+/* This file is served on pages in these Folders : Authentification */
+@import 'variables';
+@import 'functions';
+@import 'mixins';
+
+
+.sign {
+    align-content: center;
+    max-width: 450px;
+	@media (max-width: $brp_s) {
+		max-width: 350px;
+	}
+    form {
+        @include forme-style;
+    }
+}

@@ -1,182 +1,7 @@
-/* This file is served on these pages : signin, signup, account */
+/* This file is served on pages in these Folders : A REDECOUPER */
 @import 'variables';
 @import 'functions';
 @import 'mixins';
-
-/* START --------------------------------------------------------------*/
-#sub_menu {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 100%;
-    padding: 5px;
-    gap: 10px;
-    border-top-left-radius: #{$border_radius_int - 1}px;
-    border-top-right-radius: #{$border_radius_int - 1}px;
-    background-color: $prim;
-    // border-bottom: solid thin $black;
-    @media (max-width: $brp_s) {
-        padding: 3px;
-        gap: 5px;
-        border-top-left-radius: #{$border_radius_int_xs - 1}px;
-        border-top-right-radius: #{$border_radius_int_xs - 1}px;
-    }
-    a {	
-        font-size: $menu;
-        @media (max-width: $brp_s) {
-            font-size: $menu_xs;
-        }
-    }
-    .menu_btn {
-        @include menu_btn-style;
-        width: 85px;
-        height: 50px;
-        @media (max-width: $brp_s) {
-            border-radius: 8px;
-            width: 66px;
-            height: 44px;
-        }
-        img{
-            position: relative;
-            height: 30px;
-            @media (max-width: $brp_s) {
-                height: 25px;
-            }
-        }
-    }
-}
-
-#driver_buttons {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    gap: 8px;
-	@media (max-width: $brp_s) {
-		gap: 5px;
-	}
-    div {
-        display: flex;
-        justify-content: space-evenly;
-        @media (max-width: $brp_s) {
-            a {
-                font-size: 11px;
-            }
-        }
-    }
-    .carpool {
-        width: 350px;
-        @media (max-width: $brp_s) {
-            width: 235px;
-        }
-    }
-    .car {
-        width: 306px;
-        @media (max-width: $brp_s) {
-            width: 205px;
-        }
-    }
-}
-
-.sub_container {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	height: fit-content;
-	width: 100%;
-	background-color: color_opacity($tert, 0.95);	// avoid to give opacity to the children
-	border: solid thin $black;
-	padding: 10px;
-	gap:10px;
-	font-size: $text;
-	@media (max-width: $brp_s) {
-		padding: 5px;
-		gap: 5px;
-		margin-bottom: 10px;
-		font-size: $text_xs;
-	}
-}
-
-.radio_input {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    gap: 5px;
-    border: none;
-    padding: 0!important;
-    legend {
-        float: left;
-        font-size: inherit;
-        font-weight: normal;
-    }
-}
-
-.car_add_select, .car_select {
-    display: grid;
-    width: 100%;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, auto);
-    gap: 10px 0;
-    @media (max-width: $brp_xs) {
-        grid-template-rows: repeat(3, auto);
-        gap: 10px 0;
-    }
-    .item_1, .item_2 {
-        @media (max-width: $brp_xs) {
-            grid-column: span 2;
-        }
-    }
-}
-
-.item {
-    display: flex;
-    gap: 15px;
-    @media (max-width: $brp_s) {
-        gap: 8px;
-    }
-}
-
-.car_other {
-    display: grid;
-    width: 100%;
-    grid-template-rows: repeat(3, auto);
-    gap: 10px 0;
-    padding: 5px 0;
-}
-
-.main_car, .car_list {
-    width: 100%;
-}
-
-.info_main_car {
-    margin-bottom: 10px;
-	@media (max-width: $brp_s) {
-        margin-bottom: 5px;
-	}
-}
-
-.car_item {
-    border: solid thin $black;
-    margin-bottom: 10px;
-    padding: 10px;
-	@media (max-width: $brp_s) {
-        margin-bottom: 5px;
-		padding: 5px;
-	}
-}
-
-.car_action {
-    display: flex;
-    justify-content: end;
-    gap: 10px;
-	@media (max-width: $brp_s) {
-        gap: 5px;
-    }
-}
-
-.carpool_select_car{
-    width: 100%;
-}
 
 .user {
     padding: 0;
@@ -184,77 +9,22 @@
 	@media (max-width: $brp_s) {
 		// max-width: 450px;
 	}
-    .sub_page {
-        display: flex;
-        flex-direction: column;
-        padding: $padding;
-        gap: $gap_form;
-        align-items: center;
-        width: 100%;
+    .avatar_picture {
+        border: solid thin $black;
+        border-radius: 10px;
+        width: 80px;
+        height: 80px;
         @media (max-width: $brp_s) {
-            padding: 5px;
-            gap: $gap_form_xs;
+            border-radius: 8px;
+            width: 50px;
+            height: 50px;
         }
-        form {
-            @include forme-style;
-        }
-        .avatar_picture {
-            border: solid thin $black;
+        img {
+            width: 100%;
             border-radius: 10px;
-            width: 80px;
-            height: 80px;
             @media (max-width: $brp_s) {
                 border-radius: 8px;
-                width: 50px;
-                height: 50px;
-            }
-            img {
-                width: 100%;
-                border-radius: 10px;
-                @media (max-width: $brp_s) {
-                    border-radius: 8px;
-                }
             }
         }
     }
 }
-
-.sign {
-    align-content: center;
-    max-width: 450px;
-	@media (max-width: $brp_s) {
-		max-width: 350px;
-	}
-    form {
-        @include forme-style;
-    }
-}
-
-@mixin input_feedback{
-    display: none; // COMMENT FOR DEBUG
-    font-size: $text;
-	@media (max-width: $brp_s) {
-		font-size: $text_xs;
-	}
-}
-
-.danger_input{
-    @include input_feedback;
-    color: $danger;
-}
-.invalid_input{
-    @include input_feedback;
-    color: $warning;
-}
-.valid_input {
-    @include input_feedback;
-    color: $green;
-}
-
-// Affichage conditionnel des feedbacks
-.is-valid ~ .valid_input, 
-.is-invalid ~ .invalid_input, 
-.is-danger ~ .danger_input {
-    display: block;
-}
-/*-- END --------------------------------------------------------------*/

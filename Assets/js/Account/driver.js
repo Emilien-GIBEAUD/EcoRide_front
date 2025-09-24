@@ -39,7 +39,7 @@ async function loadMainCar() {
         const mainCarData = await getMainCar();
         if (mainCarData.length === 0) {
             return `
-                <p>Vous n'avez pas de véhicules saisies, veuillez saisir un véhicule</p>
+                <p>Vous n'avez pas de véhicules saisies, veuillez ajouter un véhicule.</p>
             `;
         } else {
             return `

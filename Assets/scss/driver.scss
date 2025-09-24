@@ -1,0 +1,136 @@
+/* This file is served on pages : driver (and her subpage) */
+@import 'variables';
+@import 'functions';
+@import 'mixins';
+
+.driver {
+    padding: 0;
+}
+
+.radio_input {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 5px;
+    border: none;
+    padding: 0!important;
+    legend {
+        float: left;
+        font-size: inherit;
+        font-weight: normal;
+    }
+}
+
+.car_add_select, .car_select {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 10px 0;
+    @media (max-width: $brp_xs) {
+        grid-template-rows: repeat(3, auto);
+        gap: 10px 0;
+    }
+    .item_1, .item_2 {
+        @media (max-width: $brp_xs) {
+            grid-column: span 2;
+        }
+    }
+}
+
+.item {
+    display: flex;
+    gap: 15px;
+    @media (max-width: $brp_s) {
+        gap: 8px;
+    }
+}
+
+.car_other {
+    display: grid;
+    width: 100%;
+    grid-template-rows: repeat(3, auto);
+    gap: 10px 0;
+    padding: 5px 0;
+}
+
+.main_car, .car_list, .carpool_select_car {
+    width: 100%;
+}
+
+.info_main_car {
+    margin-bottom: 10px;
+	@media (max-width: $brp_s) {
+        margin-bottom: 5px;
+	}
+}
+
+@mixin car_carpool_item {
+    border: solid thin $black;
+    margin-bottom: 10px;
+    padding: 10px;
+	@media (max-width: $brp_s) {
+        margin-bottom: 5px;
+		padding: 5px;
+	}
+}
+.car_item {
+    @include car_carpool_item;
+}
+
+.car_action {
+    display: flex;
+    justify-content: end;
+    gap: 10px;
+	@media (max-width: $brp_s) {
+        gap: 5px;
+    }
+}
+
+// carpool_add
+#carpoolAdd {
+    .suggestion_box {
+        background: $white;
+        width: 100%;
+        overflow-y: auto;
+        display: none; /* caché par défaut */
+        z-index: 10;
+    }
+
+    .suggestion_item {
+        padding: 5px;
+        cursor: pointer;
+    }
+
+    .suggestion_item:hover {
+        background: $grey;
+        color: $white;
+    }
+}
+
+// carpool_list
+.carpool_list {
+    width: 100%;
+}
+
+.carpool_item {
+    @include car_carpool_item;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 10px 10px;
+	@media (max-width: $brp_s) {
+        gap: 5px 10px;
+    }
+    .carpool_sub_item{
+        display: flex;
+        justify-content: space-evenly;
+        flex-grow: 2;
+        gap: 10px;
+    }
+    .last_item {
+        justify-content: end;
+        flex-grow: 3;
+    }
+}

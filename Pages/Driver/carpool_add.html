@@ -1,4 +1,4 @@
-<div class="container user">
+<div class="container driver">
     <nav id="sub_menu" aria-label="Menu secondaire">
         <!-- Injecté depuis sub_menu.html -->
     </nav>
@@ -9,45 +9,9 @@
         </div>
         <div class="sub_container">
             <h2>Poster un covoiturage</h2>
-            <p>En construction...</p>
-            <form id="addCarpoolForm">
-                <div class="form_input">
-                    <label for="depDateAddCarpool">Date et horaire de départ :</label>
-                    <input type="datetime-local" id="depDateAddCarpool" name="depDateAddCarpool">
-                </div>
-                <div class="form_input">
-                    <label for="depAddressAddCarpool">Adresse de départ :</label>
-                    <input type="text" id="depAddressAddCarpool" placeholder="Votre adresse de départ" name="depAddressAddCarpool">
-                </div>
-                <div class="form_input">
-                    <label for="arrAddressAddCarpool">Adresse d'arrivée :</label>
-                    <input type="text" id="arrAddressAddCarpool" placeholder="Votre adresse d'arrivée" name="arrAddressAddCarpool">
-                </div>
-                <div class="form_input">
-                    <label for="arrDateAddCarpool">Date et horaire d'arrivée :</label>
-                    <input type="datetime-local" id="arrDateAddCarpool" name="arrDateAddCarpool">
-                </div>
-                <div class="carpool_select_car">
-                    <label for="car">Véhicule :</label>
-                    <select name="car" id="car">
-                            <option value="Smart Forfour">Smart Forfour</option>
-                            <option value="Mercedes Continental GT">Mercedes-Benz Continental GT</option>
-                    </select>
-                </div>
-                <div class="form_input">
-                    <label for="priceAddCarpool">Prix :</label>
-                    <input type="number" id="priceAddCarpool" name="priceAddCarpool" min="1" max="100" >
-                </div>
-                <div class="form_input">
-                    <label for="nbPlaceAddCarpool">Nombre de places :</label>
-                    <input type="number" id="nbPlaceAddCarpool" name="nbPlaceAddCarpool" min="1" max="9" >
-                </div>
-                <div>
-                    <p>En construction...</p>
-                    <button type="button" class="btn" id="btnAddCarpool">Ajouter</button>
-                </div>
-            </form>
+            <div id="carpoolAdd">
+                <!-- Injecté -->
+            </div>
         </div>
     </div>
 </div>
-

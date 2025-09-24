@@ -127,4 +127,31 @@ export function checkPSWConfirm(input1,input2){
     }
 }
 
+/**
+ * Fonction qui transforme un objet Date en string au format YYYY-MM-DDTHH:mm.
+ *
+ * @param {Date} date - L'objet Date à transformer.
+ * @returns {string} La date au format YYYY-MM-DDTHH:mm.
+ */
+export function dateToDatetimeLocal(date) {
+    const pad = n => String(n).padStart(2, "0");    // Force 2 chiffres (ex: 9 => 09)
+    const formatted =
+        date.getFullYear() + "-" +
+        pad(date.getMonth() + 1) + "-" +
+        pad(date.getDate()) + "T" +
+        pad(date.getHours()) + ":" +
+        pad(date.getMinutes());
 
+    return formatted;
+}
+
+/**
+ * Fonction qui transforme une date en string au format YYYY-MM-DDT... en string au format DD / MM / YYYY.
+ *
+ * @param {string} date - La date à transformer.
+ * @returns {string} La date au format DD/MM/YYYY.
+ */
+export function dateToDateShort(date) {
+    const [year, month, day] = date.split("T")[0].split("-");
+    return `${day} / ${month} / ${year}`;
+}

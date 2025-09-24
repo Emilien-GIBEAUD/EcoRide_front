@@ -1,0 +1,144 @@
+@charset "UTF-8";
+/* This file is served on pages : driver (and her subpage) */
+.driver {
+  padding: 0;
+}
+
+.radio_input {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 5px;
+  border: none;
+  padding: 0 !important;
+}
+.radio_input legend {
+  float: left;
+  font-size: inherit;
+  font-weight: normal;
+}
+
+.car_add_select, .car_select {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, auto);
+  gap: 10px 0;
+}
+@media (max-width: 400px) {
+  .car_add_select, .car_select {
+    grid-template-rows: repeat(3, auto);
+    gap: 10px 0;
+  }
+}
+@media (max-width: 400px) {
+  .car_add_select .item_1, .car_add_select .item_2, .car_select .item_1, .car_select .item_2 {
+    grid-column: span 2;
+  }
+}
+
+.item {
+  display: flex;
+  gap: 15px;
+}
+@media (max-width: 630px) {
+  .item {
+    gap: 8px;
+  }
+}
+
+.car_other {
+  display: grid;
+  width: 100%;
+  grid-template-rows: repeat(3, auto);
+  gap: 10px 0;
+  padding: 5px 0;
+}
+
+.main_car, .car_list, .carpool_select_car {
+  width: 100%;
+}
+
+.info_main_car {
+  margin-bottom: 10px;
+}
+@media (max-width: 630px) {
+  .info_main_car {
+    margin-bottom: 5px;
+  }
+}
+
+.car_item {
+  border: solid thin #000000;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+@media (max-width: 630px) {
+  .car_item {
+    margin-bottom: 5px;
+    padding: 5px;
+  }
+}
+
+.car_action {
+  display: flex;
+  justify-content: end;
+  gap: 10px;
+}
+@media (max-width: 630px) {
+  .car_action {
+    gap: 5px;
+  }
+}
+
+#carpoolAdd .suggestion_box {
+  background: #FFFFFF;
+  width: 100%;
+  overflow-y: auto;
+  display: none; /* caché par défaut */
+  z-index: 10;
+}
+#carpoolAdd .suggestion_item {
+  padding: 5px;
+  cursor: pointer;
+}
+#carpoolAdd .suggestion_item:hover {
+  background: #555555;
+  color: #FFFFFF;
+}
+
+.carpool_list {
+  width: 100%;
+}
+
+.carpool_item {
+  border: solid thin #000000;
+  margin-bottom: 10px;
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 10px 10px;
+}
+@media (max-width: 630px) {
+  .carpool_item {
+    margin-bottom: 5px;
+    padding: 5px;
+  }
+}
+@media (max-width: 630px) {
+  .carpool_item {
+    gap: 5px 10px;
+  }
+}
+.carpool_item .carpool_sub_item {
+  display: flex;
+  justify-content: space-evenly;
+  flex-grow: 2;
+  gap: 10px;
+}
+.carpool_item .last_item {
+  justify-content: end;
+  flex-grow: 3;
+}
