@@ -1,9 +1,9 @@
 import Route from "./Route.js";
 import { allRoutes, websiteName } from "./allRoutes.js";
-import { basePath, isConnected, showHideForRoles, getRole } from '../Assets/js/script.js';
+import { isConnected, showHideForRoles, getRole } from '../Assets/js/script.js';
 
 // Création d'une route pour la page 404 (page introuvable)
-const route404 = new Route("404", "Page introuvable", basePath + "/Pages/404.html", []);
+const route404 = new Route("404", "Page introuvable", "/Pages/404.html", []);
 
 // Fonction qui renvoie la route correspondant à une URL donnée
 const getRouteByUrl = (url) => {
@@ -133,23 +133,8 @@ const LoadContentPage = async () => {
 // Fonction pour gérer les événements de routage (clic sur les liens) ==> sans window.event qui est déprécié
 const routeEvent = (event) => {
     event.preventDefault();
-
-    let href = event.currentTarget.getAttribute("href");
-
-    // Normalisation du lien : enlève le "./" ou basePath en trop
-    if (href.startsWith("./")) {
-        href = href.substring(1); // "./signin" -> "/signin"
-    }
-    if (href.startsWith(basePath)) {
-        href = href.replace(basePath, ""); // "/ecoride/signin" -> "/signin"
-    }
-
-    // Construction l'URL finale avec basePath
-    const finalUrl = basePath + href;
-
-    // Mise à jour de l'URL dans l'historique
-    window.history.pushState({}, "", finalUrl);
-
+    // Mise à jour de l'URL dans l'historique du navigateur
+    window.history.pushState({}, "", event.target.href);
     // Chargement du contenu de la nouvelle page
     LoadContentPage();
 };
