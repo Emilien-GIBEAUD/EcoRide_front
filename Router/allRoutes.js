@@ -5,7 +5,7 @@ import { basePath } from '../Assets/js/script.js';
 export const allRoutes = [
     // Depuis le menu principal :
     new Route(basePath + "/", "Accueil", basePath + "/Pages/home.html", [], "", basePath + "/Assets/scss/css/home.css"),
-    new Route(basePath + "/carpool", "Covoiturage", basePath + "/Pages/carpool.html", [], "", basePath + "/Assets/scss/css/carpool.css"),
+    new Route(basePath + "/search", "Covoiturage", basePath + "/Pages/search.html", [], basePath + "/Assets/js/Search/search.js", basePath + "/Assets/scss/css/search.css"),
     new Route(basePath + "/signin", "Connexion", basePath + "/Pages/Authentification/signin.html", ["disconnected"], basePath + "/Assets/js/Authentification/signin.js", basePath + "/Assets/scss/css/sign.css"), 
     new Route(basePath + "/signup", "Inscription", basePath + "/Pages/Authentification/signup.html", ["disconnected"], basePath + "/Assets/js/Authentification/signup.js", basePath + "/Assets/scss/css/sign.css"),
     new Route(basePath + "/signout", "Deconnexion", basePath + "/Pages/Authentification/signout.html", ["ROLE_ADMIN", "ROLE_USER"], basePath + "/Assets/js/Authentification/signout.js", basePath + "/Assets/scss/css/sign.css"),
