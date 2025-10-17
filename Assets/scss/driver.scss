@@ -90,21 +90,16 @@
 // carpool_add
 #carpoolAdd {
     .suggestion_box {
-        background: $white;
-        width: 100%;
-        overflow-y: auto;
-        display: none; /* caché par défaut */
-        z-index: 10;
+        @include suggestion_box;
     }
-
     .suggestion_item {
-        padding: 5px;
-        cursor: pointer;
+        @include suggestion_item;
     }
-
     .suggestion_item:hover {
-        background: $grey;
-        color: $white;
+        @include suggestion_item_hover;
+    }
+    .place {
+        position: relative;
     }
 }
 

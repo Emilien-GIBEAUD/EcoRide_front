@@ -92,6 +92,9 @@
 }
 
 #carpoolAdd .suggestion_box {
+  position: absolute; /* permet de se superposer */
+  top: 100%; /* juste sous l'input */
+  left: 0;
   background: #FFFFFF;
   width: 100%;
   overflow-y: auto;
@@ -105,6 +108,9 @@
 #carpoolAdd .suggestion_item:hover {
   background: #555555;
   color: #FFFFFF;
+}
+#carpoolAdd .place {
+  position: relative;
 }
 
 .carpool_list {
