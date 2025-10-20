@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* Main css file for the EcoRide project
 -  This file is served on all pages */
 /* START generic ------------------------------------------------------*/
@@ -499,7 +500,7 @@ main .search_bar {
     padding: 2px 5px;
   }
 }
-main .search_bar .inputs {
+main .search_bar form {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -507,15 +508,36 @@ main .search_bar .inputs {
   gap: 5px 10px;
 }
 @media (max-width: 630px) {
-  main .search_bar .inputs {
+  main .search_bar form {
     gap: 2px 5px;
   }
 }
-main .search_bar .inputs input {
+main .search_bar form input {
   border-radius: 1000px;
 }
 main .search_bar img {
   height: 40px;
+}
+main .search_bar .suggestion_box {
+  position: absolute; /* permet de se superposer */
+  top: 100%; /* juste sous l'input */
+  left: 0;
+  background: #FFFFFF;
+  width: 100%;
+  overflow-y: auto;
+  display: none; /* caché par défaut */
+  z-index: 10;
+}
+main .search_bar .suggestion_item {
+  padding: 5px;
+  cursor: pointer;
+}
+main .search_bar .suggestion_item:hover {
+  background: #555555;
+  color: #FFFFFF;
+}
+main .search_bar .place {
+  position: relative;
 }
 
 .container {

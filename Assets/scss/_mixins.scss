@@ -62,3 +62,22 @@
         font-style: italic;
     }
 }
+
+@mixin suggestion_box {
+    position: absolute; /* permet de se superposer */
+    top: 100%; /* juste sous l'input */
+    left: 0;
+    background: $white;
+    width: 100%;
+    overflow-y: auto;
+    display: none; /* caché par défaut */
+    z-index: 10;
+}
+@mixin suggestion_item {
+    padding: 5px;
+    cursor: pointer;
+}
+@mixin suggestion_item_hover {
+    background: $grey;
+    color: $white;
+}

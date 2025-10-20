@@ -1,5 +1,5 @@
 import { apiUrl, getInfoUser, getToken } from '../script.js';
-import { dateToDateShort}from '../Tools/tools.js';
+import { datetimeToDate}from '../Tools/tools.js';
 
 let userData;
 let carpoolListPending;
@@ -32,6 +32,8 @@ async function loadCarpoolList() {
         let ended = "<p>Vous n'avez pas de covoiturage(s) passés.</p>";
         
         if (carpoolListData.length !== 0) { // Si au moins un covoiturage
+            console.log(carpoolListData);
+            
             carpoolListData.forEach(elem => {
                 if (elem.travel.status === "à venir") {
                     if (pending === "<p>Vous n'avez pas de covoiturage(s) à venir.</p>") {
@@ -41,7 +43,7 @@ async function loadCarpoolList() {
                         <div class="carpool_item">
                             <div class="carpool_sub_item">
                                 <p class="underlined bold">Le :</p>
-                                <p>${dateToDateShort(elem.travel.depDateTime)}</p>
+                                <p>${datetimeToDate(elem.travel.depDateTime)}</p>
                                 <p>|</p>
                             </div>
                             <div class="carpool_sub_item">
@@ -70,7 +72,7 @@ async function loadCarpoolList() {
                         <div class="carpool_item">
                             <div class="carpool_sub_item">
                                 <p class="underlined bold">Le :</p>
-                                <p>${dateToDateShort(elem.travel.depDateTime)}</p>
+                                <p>${datetimeToDate(elem.travel.depDateTime)}</p>
                                 <p>|</p>
                             </div>
                             <div class="carpool_sub_item">
@@ -98,7 +100,7 @@ async function loadCarpoolList() {
                         <div class="carpool_item">
                             <div class="carpool_sub_item">
                                 <p class="underlined bold">Le :</p>
-                                <p>${dateToDateShort(elem.travel.depDateTime)}</p>
+                                <p>${datetimeToDate(elem.travel.depDateTime)}</p>
                                 <p>|</p>
                             </div>
                             <div class="carpool_sub_item">

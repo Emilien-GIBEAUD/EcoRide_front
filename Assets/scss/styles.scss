@@ -373,7 +373,7 @@ main {
 			gap: 0 2px;
 			padding: 2px 5px;
 		}
-		.inputs {
+		form {
 			display: flex;
 			justify-content: center;
 			align-items: center;
@@ -388,6 +388,18 @@ main {
 		}
 		img{
 			height: 40px;
+		}
+		.suggestion_box {
+			@include suggestion_box;
+		}
+		.suggestion_item {
+			@include suggestion_item;
+		}
+		.suggestion_item:hover {
+			@include suggestion_item_hover;
+		}
+		.place {
+			position: relative;
 		}
 	}
 }
