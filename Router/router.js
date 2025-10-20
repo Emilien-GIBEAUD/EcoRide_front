@@ -9,7 +9,7 @@ const route404 = new Route("404", "Page introuvable", "/Pages/404.html", []);
 const getRouteByUrl = (url) => {
     let currentRoute = null;
 
-    // Parcours de toutes les routes pour trouver la correspondance
+    // Parcours des routes pour trouver une correspondance de route
     allRoutes.forEach((element) => {
         if (element.url == url) {
             currentRoute = element;
@@ -106,7 +106,7 @@ const LoadContentPage = async () => {
             const module = await import(actualRoute.pathJS + '?t=' + Date.now()); 
             // Ajout d'un timestamp pour éviter le cache sur la page /user entre autres
             if (typeof module.initPage === 'function') {
-                module.initPage(); // Appelé automatiquement si défini
+                module.initPage(); // Appelée automatiquement si définie
             }
         } catch (error) {
             console.error("Erreur lors du chargement du module :", actualRoute.pathJS, error);
@@ -129,7 +129,7 @@ const LoadContentPage = async () => {
     }
 
     // Changement du titre de la page
-    document.title = actualRoute.title + " - " + websiteName;
+    document.title = websiteName + " - " + actualRoute.title;
 
     // Afficher/masquer les éléments en fonction du rôle
     showHideForRoles();

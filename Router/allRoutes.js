@@ -4,7 +4,7 @@ import Route from "./Route.js";
 export const allRoutes = [
     // Depuis le menu principal :
     new Route("/", "Accueil", "/Pages/home.html", [], "", "/Assets/scss/css/home.css"),
-    new Route("/search", "Covoiturage", "/Pages/search.html", [], "/Assets/js/Search/search.js", "/Assets/scss/css/search.css"),
+    new Route("/search", "Recherche", "/Pages/Travel/search.html", [], "/Assets/js/Travel/search.js", "/Assets/scss/css/travel.css"),
     new Route("/signin", "Connexion", "/Pages/Authentification/signin.html", ["disconnected"], "/Assets/js/Authentification/signin.js", "/Assets/scss/css/sign.css"), 
     new Route("/signup", "Inscription", "/Pages/Authentification/signup.html", ["disconnected"], "/Assets/js/Authentification/signup.js", "/Assets/scss/css/sign.css"),
     new Route("/signout", "Deconnexion", "/Pages/Authentification/signout.html", ["ROLE_ADMIN", "ROLE_USER"], "/Assets/js/Authentification/signout.js", "/Assets/scss/css/sign.css"),
@@ -19,9 +19,12 @@ export const allRoutes = [
     new Route("/car_edit", "Modification véhicule", "/Pages/Driver/car_edit.html", ["ROLE_ADMIN", "ROLE_USER"], "/Assets/js/Driver/car_edit.js", "/Assets/scss/css/driver.css"),
     new Route("/carpool_add", "Créer covoiturage", "/Pages/Driver/carpool_add.html", ["ROLE_ADMIN", "ROLE_USER"], "/Assets/js/Driver/carpool_add.js", "/Assets/scss/css/driver.css"),
     new Route("/carpool_list", "Liste covoiturage", "/Pages/Driver/carpool_list.html", ["ROLE_ADMIN", "ROLE_USER"], "/Assets/js/Driver/carpool_list.js", "/Assets/scss/css/driver.css"),
-    // new Route("/editPSW", "Editer mot de passe", "/Pages/Authentification/editPSW.html", ["ROLE_ADMIN", "ROLE_USER"]),
+    // Depuis les résultats de recherche :
+    new Route("/travel", "Détails voyage", "/Pages/Travel/travel.html", ["ROLE_ADMIN", "ROLE_USER"], "/Assets/js/Travel/travel.js", "/Assets/scss/css/travel.css"),
+    // Depuis le footer :
     new Route("/contact", "Contact", "/Pages/contact.html", [], "", ""),
     new Route("/legals", "Mentions légales", "/Pages/legals.html", [], "", "/Assets/scss/css/legals.css")
+    // new Route("/editPSW", "Editer mot de passe", "/Pages/Authentification/editPSW.html", ["ROLE_ADMIN", "ROLE_USER"]),
 ];
 
 // Le titre s'affiche comme ceci : Route.titre - websitename

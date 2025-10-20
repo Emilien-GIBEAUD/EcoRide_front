@@ -130,7 +130,6 @@ async function searchCarpool(){
  */
 function loadCarpoolResults(){
     const carpoolResultHtml = document.getElementById("results");
-    console.log(carpoolListData);   
     if (carpoolListData === undefined) {
         carpoolResultHtml.innerHTML = `
             <p>Saisissez vos adresses de départ et d'arrivée ainsi que que votre date de départ dans la barre de recherche.</p>
@@ -198,7 +197,7 @@ function loadCarpoolResults(){
                     <p class="results_info4">${elem.arr_address}  ${datetime2ToTime(elem.arr_date_time)}</p>
                     <p class="results_info5">${availablePlaceTXT} | ${elem.price} crédits</p>
                     <div class="pict_act_inf results_action">
-                        <a href="${apiUrl + "travel/" + elem.id}" class="btn btn_link">Détails</a>
+                        <a href="/travel?id=${elem.id}" class="btn btn_link">Détails</a>
                     </div>
                 </div>
             `;
