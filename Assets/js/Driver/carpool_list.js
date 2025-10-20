@@ -32,8 +32,6 @@ async function loadCarpoolList() {
         let ended = "<p>Vous n'avez pas de covoiturage(s) passés.</p>";
         
         if (carpoolListData.length !== 0) { // Si au moins un covoiturage
-            console.log(carpoolListData);
-            
             carpoolListData.forEach(elem => {
                 if (elem.travel.status === "à venir") {
                     if (pending === "<p>Vous n'avez pas de covoiturage(s) à venir.</p>") {
@@ -57,7 +55,7 @@ async function loadCarpoolList() {
                                 <p>|</p>
                             </div>
                             <div class="carpool_sub_item last_item">
-                                <a href="/car_edit?id=1" class="btn btn_link">...Détails...</a>
+                                <a href="/travel?id=${elem.travel.id}" class="btn btn_link">Détails</a>
                                 <a href="/car_edit?id=1" class="btn btn_link btn_danger">...Annuler...</a>
                                 <button type="button" class="btn" id="btnDeleteCarpool1">...Démarrer...</button>
                             </div>
@@ -86,7 +84,7 @@ async function loadCarpoolList() {
                                 <p>|</p>
                             </div>
                             <div class="carpool_sub_item last_item">
-                                <a href="/car_edit?id=1" class="btn btn_link">...Détails...</a>
+                                <a href="/travel?id=${elem.travel.id}" class="btn btn_link">Détails</a>
                                 <button type="button" class="btn" id="btnDeleteCarpool1">...Arrivé à destination...</button>
                             </div>
                         </div>
@@ -114,7 +112,7 @@ async function loadCarpoolList() {
                                 <p>|</p>
                             </div>
                             <div class="carpool_sub_item last_item">
-                                <a href="/car_edit?id=1" class="btn btn_link">...Détails...</a>
+                                <a href="/travel?id=${elem.travel.id}" class="btn btn_link">Détails</a>
                                 <button type="button" class="btn" id="btnDeleteCarpool1">...Laisser un avis...</button>
                             </div>
                         </div>

@@ -4,6 +4,17 @@ main {
 
 .search {
   padding: 0px;
+  width: 97%;
+  max-width: none;
+}
+
+.container {
+  padding: 20px 10px;
+}
+@media (max-width: 630px) {
+  .container {
+    padding: 10px 5px;
+  }
 }
 
 .filter {
@@ -98,23 +109,32 @@ main {
 }
 .results .result_item {
   display: grid;
-  background-color: #D0A370;
+  background-color: #FFDEAD;
   width: 100%;
+  border: solid thin #000000;
   border-radius: 10px;
-  grid-template-columns: 50px 133px 1fr 1fr 60px 80px;
+  grid-template-columns: 50px 145px 1fr 1fr 60px 80px;
   grid-template-rows: repeat(2, 1fr);
   grid-template-areas: "profile1 profile2 info2 info3 info1 action" "profile1 profile3 info4 info5 info1 action";
 }
+.results .result_item p {
+  padding: 0 5px;
+}
+@media (max-width: 630px) {
+  .results .result_item p {
+    padding: 0 3px;
+  }
+}
 @media (max-width: 830px) {
   .results .result_item {
-    grid-template-columns: 133px 1fr 80px;
+    grid-template-columns: 145px 1fr 80px;
     grid-template-rows: repeat(4, 1fr);
     grid-template-areas: "profile1 info2 info1" "profile1 info3 info1" "profile2 info4 action" "profile3 info5 action";
   }
 }
 @media (max-width: 630px) {
   .results .result_item {
-    grid-template-columns: 111px 1fr;
+    grid-template-columns: 115px 1fr;
     grid-template-rows: repeat(6, 1fr);
     grid-template-areas: "profile1 info2" "profile1 info3" "profile2 info4" "profile3 info5" "info1 action" "info1 action";
   }
@@ -279,6 +299,7 @@ main {
 .results .pict_act_inf img {
   width: 48px;
   height: 48px;
+  border: solid thin #555555;
   border-radius: 10px;
 }
 @media (max-width: 630px) {
@@ -286,5 +307,141 @@ main {
     border-radius: 8px;
     width: 28px;
     height: 28px;
+  }
+}
+
+#carpool {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 10px;
+  border: solid thin #000000;
+  border-radius: 10px;
+}
+#carpool h1 {
+  margin: auto;
+}
+#carpool h2 {
+  padding: 0;
+}
+#carpool .pb_2 {
+  padding-bottom: 8px;
+}
+@media (max-width: 630px) {
+  #carpool .pb_2 {
+    padding-bottom: 5px;
+  }
+}
+@media (max-width: 630px) {
+  #carpool {
+    gap: 5px;
+    border-radius: 5px;
+  }
+}
+#carpool .carpool_user {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 5px 10px;
+}
+@media (max-width: 630px) {
+  #carpool .carpool_user {
+    gap: 5px;
+    padding: 3px 5px;
+  }
+}
+#carpool .carpool_user img {
+  width: 50px;
+  height: 50px;
+  border: solid thin #555555;
+  border-radius: 10px;
+}
+@media (max-width: 630px) {
+  #carpool .carpool_user img {
+    width: 40px;
+    height: 40px;
+  }
+}
+@media (max-width: 630px) {
+  #carpool .carpool_user img {
+    border-radius: 8px;
+  }
+}
+#carpool .carpool_user .carpool_user_info {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 15px 25px;
+  padding: 5px 0px;
+}
+@media (max-width: 630px) {
+  #carpool .carpool_user .carpool_user_info {
+    gap: 8px 14px;
+    padding: 3px 0px;
+  }
+}
+#carpool .carpool_user .carpool_user_info .whole_width {
+  width: 100%;
+}
+#carpool .carpool_user a {
+  margin: auto;
+}
+#carpool .carpool_info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 5px 10px;
+}
+@media (max-width: 630px) {
+  #carpool .carpool_info {
+    gap: 5px;
+    padding: 3px 5px;
+  }
+}
+#carpool .carpool_car_item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+@media (max-width: 630px) {
+  #carpool .carpool_car_item {
+    gap: 15px;
+  }
+}
+#carpool .carpool_car_item img {
+  width: 50px;
+  height: 50px;
+}
+@media (max-width: 630px) {
+  #carpool .carpool_car_item img {
+    width: 40px;
+    height: 40px;
+  }
+}
+#carpool .electric_car {
+  margin: auto;
+  border: solid thin #000000;
+  border-radius: 10px;
+  padding: 0px 8px;
+}
+@media (max-width: 630px) {
+  #carpool .electric_car {
+    border-radius: 8px;
+    padding: 0px 5px;
+  }
+}
+#carpool .carpool_actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px 20px;
+  padding: 20px 10px;
+}
+@media (max-width: 630px) {
+  #carpool .carpool_actions {
+    gap: 8px 10px;
+    padding: 10px 6px;
   }
 }

@@ -8,6 +8,15 @@ main {
 
 .search {
     padding: 0px;
+    width: 97%;
+    max-width: none;
+}
+
+.container {
+    padding: 20px 10px;
+    @media (max-width: $brp_s) {
+        padding: 10px 5px;
+    }
 }
 
 .filter {
@@ -87,17 +96,24 @@ main {
     }
     .result_item{
         display: grid;
-        background-color: $second;
+        background-color: $tert;
         width: 100%;
+        border: solid thin $black;
         border-radius: 10px;
-        grid-template-columns: 50px 133px 1fr 1fr 60px 80px;
+        p {
+            padding: 0 5px;
+            @media (max-width: $brp_s) {
+                padding: 0 3px;
+            }
+        }
+        grid-template-columns: 50px 145px 1fr 1fr 60px 80px;
         grid-template-rows: repeat(2, 1fr);
         grid-template-areas:
             "profile1 profile2 info2 info3 info1 action"
             "profile1 profile3 info4 info5 info1 action";
 
         @media (max-width: $brp_rst_search) {
-            grid-template-columns: 133px 1fr 80px;
+            grid-template-columns: 145px 1fr 80px;
             grid-template-rows: repeat(4, 1fr);
             grid-template-areas:
                 "profile1 info2 info1"
@@ -107,7 +123,7 @@ main {
         }
 
         @media (max-width: $brp_s) {
-            grid-template-columns: 111px 1fr;
+            grid-template-columns: 115px 1fr;
             grid-template-rows: repeat(6, 1fr);
             grid-template-areas:
                 "profile1 info2"
@@ -173,12 +189,118 @@ main {
         img {
             width:  48px;
             height: 48px;
+            border: solid thin $grey;
             border-radius: 10px;
             @media (max-width: $brp_s) {
                 border-radius: 8px;
                 width:  28px;
                 height: 28px;
             }
+        }
+    }
+}
+
+@mixin carpool-img {
+    width:  50px;
+    height: 50px;
+    @media (max-width: $brp_s) {
+        width:  40px;
+        height: 40px;
+    }
+}
+
+#carpool {
+    h1 { margin: auto; }
+    h2 { padding: 0; }
+    .pb_2 {
+        padding-bottom: 8px;
+        @media (max-width: $brp_s) {
+            padding-bottom: 5px;
+        }
+    }
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+    border: solid thin $black;
+    border-radius: 10px;
+    @media (max-width: $brp_s) {
+        gap: 5px;
+        border-radius: 5px;
+    }
+    .carpool_user {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 5px 10px;
+        @media (max-width: $brp_s) {
+            gap: 5px;
+            padding: 3px 5px;
+        }
+        img {
+            @include carpool-img;
+            border: solid thin $grey;
+            border-radius: 10px;
+            @media (max-width: $brp_s) {
+                border-radius: 8px;
+            }
+        }
+        .carpool_user_info {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 15px 25px;
+            padding: 5px 0px;
+            @media (max-width: $brp_s) {
+                gap: 8px 14px;
+                padding: 3px 0px;
+            }
+            .whole_width { width: 100%; }
+        }
+        a { margin: auto; }
+    }
+    .carpool_info {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        padding: 5px 10px;
+        @media (max-width: $brp_s) {
+            gap: 5px;
+            padding: 3px 5px;
+        }
+    }
+    .carpool_car_item {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        @media (max-width: $brp_s) {
+            gap: 15px;
+        }
+        img {
+            @include carpool-img;
+        }
+    }
+    .electric_car { 
+        margin: auto; 
+        border: solid thin $black;
+        border-radius: 10px;
+        padding: 0px 8px;
+        @media (max-width: $brp_s) {
+            border-radius: 8px;
+            padding: 0px 5px;
+        }
+    }
+    .carpool_actions {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px 20px;
+        padding: 20px 10px;
+        @media (max-width: $brp_s) {
+            gap: 8px 10px;
+            padding: 10px 6px;
         }
     }
 }
