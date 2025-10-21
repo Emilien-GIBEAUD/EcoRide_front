@@ -15,6 +15,9 @@ let geocodeTimerId;            // ID du timeout pour géocoder une adresse
 const proposeTimer = 1000 ;    // Délai en millisecondes avant de proposer des adresses
 const geocodeTimer = 1500 ;    // Délai en millisecondes avant de géocoder une adresse
 
+let eco, price, note, nbFilteredResults;
+
+
 /**
  * Initialise la page avec les écouteurs sur les inputs.
  */
@@ -28,6 +31,11 @@ export async function initPage() {
     const searchCarpoolForm = document.getElementById("searchCarpoolForm");
     const btnSearchCarpool = document.getElementById("btnSearchCarpool");
 
+    const filterEco = document.getElementById("filterEco");
+    const filterMaxPrice = document.getElementById("filterMaxPrice");
+    const filterMinNote = document.getElementById("filterMinNote");
+    const btnFilter = document.getElementById("btnFilter");
+
     // Vérification du formulaire saisi
     btnSearchCarpool.disabled = true;
     dateSearch.addEventListener("change", checkInputs);
@@ -37,7 +45,7 @@ export async function initPage() {
     initAddressSuggestions(depAddressSearch, depSuggestion, depGeocode);
     initAddressSuggestions(arrAddressSearch, arrSuggestion, arrGeocode);
 
-    // Envoie du formulaire
+    // Ecouteur sur le bouton de recherche
     btnSearchCarpool.addEventListener("click", async () => {
         if (!depGeocode.x || !arrGeocode.x) {
             alert("Problème sur les adresses géocodées.");
@@ -46,6 +54,9 @@ export async function initPage() {
         carpoolListData = await searchCarpool();
         loadCarpoolResults();
     });
+
+    // Ecouteur sur le bouton de filtre
+    btnFilter.addEventListener("click", filter);
 
     loadCarpoolResults();
 }
@@ -149,7 +160,9 @@ function loadCarpoolResults(){
             `;
         } else {
             carpoolResultHtml.innerHTML = `
-                <p>${carpoolListData.length} covoiturages trouvés</p>
+                <div id="filterInfoHTML">
+                    <!-- Injecté par la fonction filter() -->
+                </div>
                 <div id="result_items">
                     <!-- Injecté -->
                 </div>
@@ -160,6 +173,7 @@ function loadCarpoolResults(){
         let availablePlaceTXT;
         let ecoTravel;
         let note;
+        let data_note;
         carpoolListData.forEach(elem => {
             if (elem.available_place === 1) {
                 availablePlaceTXT = "1 place";
@@ -175,11 +189,13 @@ function loadCarpoolResults(){
 
             if (elem.note === null) {
                 note = "pas de note";
+                data_note = 10;
             } else {
                 note = elem.note + " /10";
+                data_note = elem.note;
             }
             resultItems += `
-                <div class="result_item">
+                <div class="result_item" data-eco="${elem.eco}" data-price="${elem.price}" data-note="${data_note}">
                     <div class="pict_act_inf results_profile1">
                         <img src="${avatarsUrl + elem.avatar_file}" alt="Avatar de l'utilisateur" />
                     </div>
@@ -203,6 +219,7 @@ function loadCarpoolResults(){
             `;
         });
         carpoolResultItemsHtml.innerHTML = resultItems;
+        filter();
     }
 }
 
@@ -300,4 +317,69 @@ function geocodeAddress(input, geocodeObject, timer, callback){
             geocodeObject = {};
         }
     }, timer);
+}
+
+/**
+ * Filtre les résultats à l'aide des données saisies.
+ */
+function filter(){
+    if (carpoolListData.length <= 1) {
+        return;
+    }
+
+    const filterInfoHTML = document.getElementById("filterInfoHTML");
+    filterInfoHTML.innerHTML = "";
+
+    eco = filterEco.checked ? 1 : 0;    // 1 => affiche que les eco, 0 => affiche tout
+    if (filterMaxPrice.value === "") {
+        price = Infinity;
+    } else {
+        price = Number.parseInt(escapeHTML(filterMaxPrice.value));
+    }
+    if (filterMinNote.value === "") {
+        note = 0;
+    } else {
+        note = Number.parseFloat(escapeHTML(filterMinNote.value));
+    }
+
+    nbFilteredResults = 0;
+    document.querySelectorAll('.result_item').forEach(item => {
+        const dataEco = Number.parseInt(item.dataset.eco);
+        const dataPrice = Number.parseInt(item.dataset.price);
+        const dataNote = Number.parseFloat(item.dataset.note);
+
+        if (dataEco >= eco && dataPrice <= price && dataNote >= note) {
+            nbFilteredResults++;
+            item.style.display = "";
+        } else {
+            item.style.display = "none";
+        }
+    });
+
+    if (carpoolListData.length > nbFilteredResults && carpoolListData.length > 1) {
+        if (nbFilteredResults === 1) {
+            filterInfoHTML.innerHTML = `
+                    <p> ${nbFilteredResults} covoiturage trouvé</p>
+                    <p class="italic">(${carpoolListData.length} hors filtres)</p>
+                    <button type="button" class="btn" id="btnInitFilter">Réinitialiser les filtres</button>
+            `;
+        }else {
+            filterInfoHTML.innerHTML = `
+                    <p> ${nbFilteredResults} covoiturages trouvés</p>
+                    <p class="italic">(${carpoolListData.length} hors filtres)</p>
+                    <button type="button" class="btn" id="btnInitFilter">Réinitialiser les filtres</button>
+            `;
+        }
+        const btnInitFilter = document.getElementById("btnInitFilter");
+        btnInitFilter.addEventListener("click", () => {
+            filterEco.checked = false;
+            filterMaxPrice.value = "";
+            filterMinNote.value = "";
+            filter();
+        });
+    } else {
+        filterInfoHTML.innerHTML = `
+                <p> ${nbFilteredResults} covoiturages trouvés</p>
+        `;
+    }
 }
