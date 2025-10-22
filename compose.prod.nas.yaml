@@ -4,21 +4,34 @@ services:
     container_name: ecoride
     labels:
       - "traefik.enable=true"
-      # && !PathPrefix(`/ecoride/api`) évite un conflit de règle avec la stack ecoride_back
-      - "traefik.http.routers.front.rule=Host(`petitmaraichin.myasustor.com`) && PathPrefix(`/ecoride`) && !PathPrefix(`/ecoride/api`)"
-      - "traefik.http.routers.front.entrypoints=websecure"
-      - "traefik.http.routers.front.tls=true"
-      - "traefik.http.routers.front.tls.certresolver=myresolver"
-      - "traefik.http.services.front.loadbalancer.server.port=80"
+
+      # Règle de routage HTTP (ACME challenge)
+      - "traefik.http.routers.ecoride-front-http.rule=Host(`ecoridedupicton.me`)"
+      - "traefik.http.routers.ecoride-front-http.entrypoints=web"
+      - "traefik.http.routers.ecoride-front-http.middlewares=redirect-to-https"
+
+      # Règle de routage HTTPS
+      - "traefik.http.routers.ecoride-front.rule=Host(`ecoridedupicton.me`)"
+      - "traefik.http.routers.ecoride-front.entrypoints=websecure"
+      - "traefik.http.routers.ecoride-front.tls=true"
+      - "traefik.http.routers.ecoride-front.tls.certresolver=myresolver"
+
+      # Service
+      - "traefik.http.services.ecoride-front.loadbalancer.server.port=80"
+
       # Ajouts pour la stabilité
-      - "traefik.http.services.front.loadbalancer.healthcheck.path=/"
-      - "traefik.http.services.front.loadbalancer.healthcheck.interval=30s"
+      - "traefik.http.services.ecoride-front.loadbalancer.healthcheck.path=/"
+      - "traefik.http.services.ecoride-front.loadbalancer.healthcheck.interval=30s"
+
+      # Middleware HTTP -> HTTPS
+      - "traefik.http.middlewares.redirect-to-https.redirectscheme.scheme=https"
+
     networks:
       - traefik_proxy
-      - ecoride-network
+      # - ecoride-network
 
 networks:
   traefik_proxy:
     external: true
-  ecoride-network:
-    external: true
+  # ecoride-network:
+  #   external: true
