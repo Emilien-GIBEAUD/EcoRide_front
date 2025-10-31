@@ -1,15 +1,15 @@
 import Route from "./Route.js";
 import { allRoutes, websiteName } from "./allRoutes.js";
-import { basePath, isConnected, showHideForRoles, getRole } from '../Assets/js/script.js';
+import { isConnected, showHideForRoles, getRole } from '../Assets/js/script.js';
 
 // Création d'une route pour la page 404 (page introuvable)
-const route404 = new Route("404", "Page introuvable", basePath + "/Pages/404.html", []);
+const route404 = new Route("404", "Page introuvable", "/Pages/404.html", []);
 
 // Fonction qui renvoie la route correspondant à une URL donnée
 const getRouteByUrl = (url) => {
     let currentRoute = null;
 
-    // Parcours de toutes les routes pour trouver la correspondance
+    // Parcours des routes pour trouver une correspondance de route
     allRoutes.forEach((element) => {
         if (element.url == url) {
             currentRoute = element;
@@ -53,7 +53,7 @@ const LoadContentPage = async () => {
     // Pages présentant des factorisations
     const url = actualRoute.url;
     // Pages utilisant le sous menu
-    const urlWithSub_menu = ['/user', '/passenger', '/driver', '/review', '/car', '/car_add', '/car_edit', '/car_list', '/carpool', '/carpool_add', '/carpool_list'];
+    const urlWithSub_menu = ['/user', '/passenger', '/driver', '/review', '/review_app', '/car', '/car_add', '/car_edit', '/car_list', '/carpool_add', '/carpool_list'];
     if (urlWithSub_menu.includes(url)) {
         try {
             const sub_menu = await fetch('./Pages/_components/sub_menu.html').then((res) => res.text());
@@ -69,7 +69,7 @@ const LoadContentPage = async () => {
     }
 
     // Pages utilisant les boutons conducteur
-    const urlWithDriver_buttons = ['/driver', '/car', '/car_add', '/car_edit', '/car_list', '/carpool', '/carpool_add', '/carpool_list'];
+    const urlWithDriver_buttons = ['/driver', '/car', '/car_add', '/car_edit', '/car_list', '/carpool_add', '/carpool_list'];
     if (urlWithDriver_buttons.includes(url)) {
         try {
             const driver_buttons = await fetch('./Pages/_components/driver_buttons.html').then((res) => res.text());
@@ -84,13 +84,29 @@ const LoadContentPage = async () => {
         }
     }
 
+    // Pages utilisant la barre de recherche
+    const urlWithSearch_bar = ['/', '/search'];
+    if (urlWithSearch_bar.includes(url)) {
+        try {
+            const search_bar = await fetch('./Pages/_components/search_bar.html').then((res) => res.text());
+            const nav = document.getElementById("search_bar");
+            if (nav) {
+                nav.innerHTML = search_bar;
+            } else {
+                console.warn("Aucun élément #search_bar trouvé dans la page");
+            }
+        } catch (e) {
+            console.error("Erreur lors du chargement dela barre de recherche :", e);
+        }
+    }
+
     // Ajout du contenu JavaScript AVEC import
     if (actualRoute.pathJS) {
         try {
             const module = await import(actualRoute.pathJS + '?t=' + Date.now()); 
             // Ajout d'un timestamp pour éviter le cache sur la page /user entre autres
             if (typeof module.initPage === 'function') {
-                module.initPage(); // Appelé automatiquement si défini
+                module.initPage(); // Appelée automatiquement si définie
             }
         } catch (error) {
             console.error("Erreur lors du chargement du module :", actualRoute.pathJS, error);
@@ -113,7 +129,7 @@ const LoadContentPage = async () => {
     }
 
     // Changement du titre de la page
-    document.title = actualRoute.title + " - " + websiteName;
+    document.title = websiteName + " - " + actualRoute.title;
 
     // Afficher/masquer les éléments en fonction du rôle
     showHideForRoles();
@@ -133,23 +149,8 @@ const LoadContentPage = async () => {
 // Fonction pour gérer les événements de routage (clic sur les liens) ==> sans window.event qui est déprécié
 const routeEvent = (event) => {
     event.preventDefault();
-
-    let href = event.currentTarget.getAttribute("href");
-
-    // Normalisation du lien : enlève le "./" ou basePath en trop
-    if (href.startsWith("./")) {
-        href = href.substring(1); // "./signin" -> "/signin"
-    }
-    if (href.startsWith(basePath)) {
-        href = href.replace(basePath, ""); // "/ecoride/signin" -> "/signin"
-    }
-
-    // Construction l'URL finale avec basePath
-    const finalUrl = basePath + href;
-
-    // Mise à jour de l'URL dans l'historique
-    window.history.pushState({}, "", finalUrl);
-
+    // Mise à jour de l'URL dans l'historique du navigateur
+    window.history.pushState({}, "", event.target.href);
     // Chargement du contenu de la nouvelle page
     LoadContentPage();
 };

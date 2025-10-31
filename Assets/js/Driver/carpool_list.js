@@ -1,5 +1,5 @@
 import { apiUrl, getInfoUser, getToken } from '../script.js';
-import { dateToDateShort}from '../Tools/tools.js';
+import { datetimeToDate}from '../Tools/tools.js';
 
 let userData;
 let carpoolListPending;
@@ -41,7 +41,7 @@ async function loadCarpoolList() {
                         <div class="carpool_item">
                             <div class="carpool_sub_item">
                                 <p class="underlined bold">Le :</p>
-                                <p>${dateToDateShort(elem.travel.depDateTime)}</p>
+                                <p>${datetimeToDate(elem.travel.depDateTime)}</p>
                                 <p>|</p>
                             </div>
                             <div class="carpool_sub_item">
@@ -55,7 +55,7 @@ async function loadCarpoolList() {
                                 <p>|</p>
                             </div>
                             <div class="carpool_sub_item last_item">
-                                <a href="/car_edit?id=1" class="btn btn_link">...Détails...</a>
+                                <a href="/travel?id=${elem.travel.id}" class="btn btn_link">Détails</a>
                                 <a href="/car_edit?id=1" class="btn btn_link btn_danger">...Annuler...</a>
                                 <button type="button" class="btn" id="btnDeleteCarpool1">...Démarrer...</button>
                             </div>
@@ -70,7 +70,7 @@ async function loadCarpoolList() {
                         <div class="carpool_item">
                             <div class="carpool_sub_item">
                                 <p class="underlined bold">Le :</p>
-                                <p>${dateToDateShort(elem.travel.depDateTime)}</p>
+                                <p>${datetimeToDate(elem.travel.depDateTime)}</p>
                                 <p>|</p>
                             </div>
                             <div class="carpool_sub_item">
@@ -84,7 +84,7 @@ async function loadCarpoolList() {
                                 <p>|</p>
                             </div>
                             <div class="carpool_sub_item last_item">
-                                <a href="/car_edit?id=1" class="btn btn_link">...Détails...</a>
+                                <a href="/travel?id=${elem.travel.id}" class="btn btn_link">Détails</a>
                                 <button type="button" class="btn" id="btnDeleteCarpool1">...Arrivé à destination...</button>
                             </div>
                         </div>
@@ -98,7 +98,7 @@ async function loadCarpoolList() {
                         <div class="carpool_item">
                             <div class="carpool_sub_item">
                                 <p class="underlined bold">Le :</p>
-                                <p>${dateToDateShort(elem.travel.depDateTime)}</p>
+                                <p>${datetimeToDate(elem.travel.depDateTime)}</p>
                                 <p>|</p>
                             </div>
                             <div class="carpool_sub_item">
@@ -112,7 +112,7 @@ async function loadCarpoolList() {
                                 <p>|</p>
                             </div>
                             <div class="carpool_sub_item last_item">
-                                <a href="/car_edit?id=1" class="btn btn_link">...Détails...</a>
+                                <a href="/travel?id=${elem.travel.id}" class="btn btn_link">Détails</a>
                                 <button type="button" class="btn" id="btnDeleteCarpool1">...Laisser un avis...</button>
                             </div>
                         </div>

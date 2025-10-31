@@ -1,11 +1,12 @@
 // Détection de l'environnement : local ou prod
-export const basePath = window.location.pathname.startsWith("/ecoride") ? "/ecoride" : "";
-
-export const apiUrl = (basePath === "/ecoride") ? "https://petitmaraichin.myasustor.com/ecoride/api/" : "https://localhost/api/";
-export const avatarsUrl = (basePath === "/ecoride") ? "https://petitmaraichin.myasustor.com/ecoride/uploads/avatars/" : "https://localhost/uploads/avatars/";
+// export const basePath = window.location.pathname.startsWith("/ecoride") ? "/ecoride" : "";
+// export const apiUrl = (basePath === "/ecoride") ? "https://petitmaraichin.myasustor.com/ecoride/api/" : "https://localhost/api/";
+// export const avatarsUrl = (basePath === "/ecoride") ? "https://petitmaraichin.myasustor.com/ecoride/uploads/avatars/" : "https://localhost/uploads/avatars/";
+const hostname = window.location.hostname;
+export const apiUrl = (hostname === "localhost") ? "https://localhost/api/" : "https://petitmaraichin.myasustor.com/api/";
+export const avatarsUrl = (hostname === "localhost") ? "https://localhost/uploads/avatars/" : "https://petitmaraichin.myasustor.com/uploads/avatars/";
 
 export const maxSizeAvatar = 0.5 ;  // Taille max des images pouvant être envoyées (en Mo)
-
 
 export const tokenCookieName = "accesstoken";
 // Méthodes pour créer et lire un token à l'aide des méthodes ---Cookie

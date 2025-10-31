@@ -38,7 +38,9 @@ h2 {
 .underlined {
 	text-decoration: underline;
 }
-
+.italic {
+	font-style: italic;
+}
 .bold {
 	font-weight: bold;
 }
@@ -262,14 +264,14 @@ select {
 		padding: 4px 0;
 	}
 }
-
-input {
+textarea { width: 100% !important; }
+input, textarea {
 	@include btn_inp-style;
     background-color: $quat;
 }
 // Placeholder
-input::placeholder {
-	color: $grey;		// to fix the placeholder coulor
+input::placeholder, textarea::placeholder {
+	color: $grey;		// to fix the placeholder color
 	opacity: 1;
 }
 input[type="date"] {
@@ -373,7 +375,7 @@ main {
 			gap: 0 2px;
 			padding: 2px 5px;
 		}
-		.inputs {
+		form {
 			display: flex;
 			justify-content: center;
 			align-items: center;
@@ -388,6 +390,18 @@ main {
 		}
 		img{
 			height: 40px;
+		}
+		.suggestion_box {
+			@include suggestion_box;
+		}
+		.suggestion_item {
+			@include suggestion_item;
+		}
+		.suggestion_item:hover {
+			@include suggestion_item_hover;
+		}
+		.place {
+			position: relative;
 		}
 	}
 }
@@ -412,7 +426,7 @@ main {
 	@media (max-width: $brp_s) {
 		border-radius: #{$border_radius_int_xs}px;
 		padding: $padding_xs;
-		width: 95%;
+		width: 97%;
 		gap: 2px;
 		margin-bottom: 10px;
 		font-size: $text_xs;

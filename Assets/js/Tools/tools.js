@@ -146,12 +146,37 @@ export function dateToDatetimeLocal(date) {
 }
 
 /**
- * Fonction qui transforme une date en string au format YYYY-MM-DDT... en string au format DD / MM / YYYY.
+ * Fonction qui transforme une datetime en string au format YYYY-MM-DDTHH:MM:SS... en string de date au format DD / MM / YYYY.
  *
- * @param {string} date - La date à transformer.
- * @returns {string} La date au format DD/MM/YYYY.
+ * @param {string} date_time - La date à transformer.
+ * @returns {string} La date au format DD / MM / YYYY.
  */
-export function dateToDateShort(date) {
-    const [year, month, day] = date.split("T")[0].split("-");
+export function datetimeToDate(date_time) {
+    const [year, month, day] = date_time.split("T")[0].split("-");
     return `${day} / ${month} / ${year}`;
 }
+
+/**
+ * Fonction qui transforme une datetime en string au format YYYY-MM-DD HH:MM:SS en string de date au format DD / MM / YYYY.
+ *
+ * @param {string} date_time - La date à transformer.
+ * @returns {string} La date au format DD / MM / YYYY.
+ */
+export function datetime2ToDate(date_time) {
+    const [year, month, day] = date_time.split(" ")[0].split("-");
+    return `${day} / ${month} / ${year}`;
+}
+
+/**
+ * Fonction qui transforme une datetime en string au format YYYY-MM-DD THH:MM:SS en string de temps au format HHhmm.
+ *
+ * @param {string} date_time - La date à transformer.
+ * @returns {string} Le temps au format HHhmm.
+ */
+export function datetime2ToTime(datetime) {
+    const [hour, minute] = datetime.split(" ")[1].split(":");
+    return `${hour}h${minute}`;
+}
+// export function datetime2ToTime(date_time) {
+//     return date_time;
+// }

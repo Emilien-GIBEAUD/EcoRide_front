@@ -19,3 +19,18 @@ main {
   justify-content: space-evenly;
   width: 100%;
 }
+
+.comments {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.comments #comments {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.comments .comment_card div {
+  display: flex;
+  gap: 10px;
+}

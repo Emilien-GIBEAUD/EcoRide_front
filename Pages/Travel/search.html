@@ -1,0 +1,36 @@
+<div id="search_bar" class="search_bar">
+    <!-- Injecté depuis search_bar.html -->
+</div>
+
+<div class="container search">
+    <div class="filter">
+        <div class="filter_action">
+            <h2>Filtres :</h2>
+            <button type="button" class="btn" id="btnFilter">Filtrer</button>
+        </div>
+        <form id="filterForm">
+            <fieldset>
+                <legend>100% vert ?</legend>
+                <div class="form_checkbox">
+                    <input type="checkbox" id="filterEco" name="yes" value="yes"/>
+                    <label for="filterEco">oui</label>
+                </div>
+            </fieldset>
+            <div class="form_input">
+                <label for="filterMaxPrice">Prix max.</label>
+                <input type="number" id="filterMaxPrice" name="maxPrice" step="1" min="2">
+            </div>
+            <div class="form_input">
+                <label for="filterMinNote">Note min.</label>
+                <input type="number" id="filterMinNote" name="minNote" step="0.5" max="10" min="0">
+            </div>
+        </form>
+    </div>
+    <div class="results">
+        <h1>Résultat de la recherche</h1>
+        <div id="results" class="results">
+            <!-- Injectés avec search.js -->
+        </div>
+    </div>
+</div>
+
