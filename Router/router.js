@@ -53,7 +53,7 @@ const LoadContentPage = async () => {
     // Pages présentant des factorisations
     const url = actualRoute.url;
     // Pages utilisant le sous menu
-    const urlWithSub_menu = ['/user', '/passenger', '/driver', '/review', '/car', '/car_add', '/car_edit', '/car_list', '/carpool_add', '/carpool_list'];
+    const urlWithSub_menu = ['/user', '/passenger', '/driver', '/review', '/review_app', '/car', '/car_add', '/car_edit', '/car_list', '/carpool_add', '/carpool_list'];
     if (urlWithSub_menu.includes(url)) {
         try {
             const sub_menu = await fetch('./Pages/_components/sub_menu.html').then((res) => res.text());

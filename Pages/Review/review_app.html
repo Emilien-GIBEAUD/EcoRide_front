@@ -1,0 +1,31 @@
+<div class="container review">
+    <nav id="sub_menu" aria-label="Menu secondaire">
+        <!-- Injecté depuis sub_menu.html -->
+    </nav>
+    <div class="sub_page">
+        <h1>Page avis</h1>
+        <div class="sub_container">
+            <h2>Laisser nous votre avis</h2>
+            <form id="commentAppForm">
+                <div class="form_input">
+                    <label for="noteCommentApp">Votre note :</label>
+                    <input type="number" id="noteCommentApp" name="note" min="0" max="5" placeholder="Saisissez votre note">
+                    <div class="invalid_input">
+                        La note est requise
+                    </div>
+                </div>
+                <div class="form_input">
+                    <label for="reviewCommentApp">Votre avis sur notre application :</label>
+                    <textarea id="reviewCommentApp"name="comment" placeholder="Saisissez votre avis" rows="6" required="required"></textarea>
+                    <div class="invalid_input">
+                        Votre avis est requis
+                    </div>
+                </div>
+                <p class="info">Tous les champs sont obligatoires.</p>
+                <div>
+                    <button type="button" class="btn" id="btnCommentApp">Poster votre avis</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

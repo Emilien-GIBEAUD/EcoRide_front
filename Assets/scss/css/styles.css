@@ -356,7 +356,11 @@ select {
   }
 }
 
-input {
+textarea {
+  width: 100% !important;
+}
+
+input, textarea {
   display: inline-block;
   color: #000000;
   opacity: 1;
@@ -369,19 +373,19 @@ input {
   background-color: #FFF8DC;
 }
 @media (max-width: 630px) {
-  input {
+  input, textarea {
     padding: 5px 8px;
     border-radius: 8px;
     font-size: 13px;
   }
 }
 
-input::-moz-placeholder {
+input::-moz-placeholder, textarea::-moz-placeholder {
   color: #555555;
   opacity: 1;
 }
 
-input::placeholder {
+input::placeholder, textarea::placeholder {
   color: #555555;
   opacity: 1;
 }
