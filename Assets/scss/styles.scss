@@ -38,7 +38,9 @@ h2 {
 .underlined {
 	text-decoration: underline;
 }
-
+.italic {
+	font-style: italic;
+}
 .bold {
 	font-weight: bold;
 }
@@ -262,14 +264,14 @@ select {
 		padding: 4px 0;
 	}
 }
-
-input {
+textarea { width: 100% !important; }
+input, textarea {
 	@include btn_inp-style;
     background-color: $quat;
 }
 // Placeholder
-input::placeholder {
-	color: $grey;		// to fix the placeholder coulor
+input::placeholder, textarea::placeholder {
+	color: $grey;		// to fix the placeholder color
 	opacity: 1;
 }
 input[type="date"] {

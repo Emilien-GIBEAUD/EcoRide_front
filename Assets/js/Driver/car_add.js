@@ -16,7 +16,7 @@ export async function initPage() {
     const color = document.getElementById("color");
     const energy = document.getElementById("energy");
     const model = document.getElementById("model");
-    sendListToHTML(brand, brandList, "brand");
+    sendListToHTML(brand, brandList,"brand");
     sendListToHTML(color, colorList,"color");
     sendListToHTML(energy, energyList,"energy");
     brand.addEventListener("change", () => loadSubList(model,modelList,"model",brand.value));
