@@ -1,6 +1,6 @@
 # A utiliser en prod uniquement
 # Pour le dev, utiliser le compose.yaml
-FROM nginx:1.29.0-alpine3.22
+FROM nginx:1.29.3-alpine3.22
 
 # Copie des fichiers dans le répertoire nginx
 COPY . /usr/share/nginx/html

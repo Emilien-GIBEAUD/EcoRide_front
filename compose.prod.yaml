@@ -1,0 +1,14 @@
+# 1. Copier ce fichier dans le dossier de prod (en le renommant en compose.yaml)
+# 2. Lancer le conteneur avec : sudo docker compose up -d
+services:
+  front:
+    image: emiliengibeaud/ecoride_front:latest
+    container_name: ecoride
+    restart: unless-stopped
+    networks:
+      - edge
+
+networks:
+  edge:
+    external: true
+    name: edge_edge
