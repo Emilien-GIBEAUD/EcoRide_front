@@ -1,8 +1,7 @@
 // Détection de l'environnement : local ou prod
 const hostname = window.location.hostname;
-// export const apiUrl = (hostname === "localhost") ? "https://localhost/api/" : "https://ecoridedupicton.me/api/";
-export const apiUrl = (hostname === "localhost") ? "https://localhost/api/" : "https://api.ecoridedupicton.me/api/";
-export const avatarsUrl = (hostname === "localhost") ? "https://localhost/uploads/avatars/" : "https://api.ecoridedupicton.me/uploads/avatars/";
+export const apiUrl = (hostname === "localhost") ? "https://localhost/api/" : "https://erapi.petitmaraichin.fr/api/";
+export const avatarsUrl = (hostname === "localhost") ? "https://localhost/uploads/avatars/" : "https://erapi.petitmaraichin.fr/uploads/avatars/";
 
 export const maxSizeAvatar = 0.5 ;  // Taille max des images pouvant être envoyées (en Mo)
 
